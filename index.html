@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -11,7 +12,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #e9ecef;
+            background-color: #f8f9fa;
             color: #333;
         }
 
@@ -22,7 +23,7 @@
         }
 
         header {
-            background: linear-gradient(90deg, #00c8ff, #6610f2);
+            background: linear-gradient(90deg, #007bff, #6610f2);
             color: #fff;
             padding: 20px 0;
             border-bottom: #6610f2 3px solid;
@@ -44,12 +45,34 @@
             padding: 0;
             list-style: none;
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
         }
 
         header li {
             display: inline;
             padding: 0 20px;
+            position: relative;
+        }
+
+        header li:hover .dropdown {
+            display: block;
+        }
+
+        header .dropdown {
+            display: none;
+            position: absolute;
+            background: #007bff;
+            padding: 10px;
+            top: 40px;
+            left: 0;
+            width: 200px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        header .dropdown li {
+            display: block;
+            padding: 10px;
+            text-align: left;
         }
 
         header #branding {
