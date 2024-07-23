@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,53 +9,81 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #e9ecef;
             color: #333;
         }
+
         .container {
             width: 80%;
             margin: auto;
             overflow: hidden;
         }
+
         header {
-            background: #333;
+            background: linear-gradient(90deg, #007bff, #6610f2);
             color: #fff;
-            padding-top: 30px;
-            min-height: 70px;
-            border-bottom: #0779e4 3px solid;
+            padding: 20px 0;
+            border-bottom: #6610f2 3px solid;
         }
+
         header a {
             color: #fff;
             text-decoration: none;
             text-transform: uppercase;
             font-size: 16px;
+            transition: color 0.3s;
         }
+
+        header a:hover {
+            color: #ffd700;
+        }
+
         header ul {
             padding: 0;
             list-style: none;
+            display: flex;
+            justify-content: space-around;
         }
+
         header li {
-            float: left;
             display: inline;
-            padding: 0 20px 0 20px;
+            padding: 0 20px;
         }
+
         header #branding {
-            float: left;
+            text-align: center;
         }
+
         header #branding h1 {
             margin: 0;
+            font-size: 24px;
         }
+
+        header #branding h4 {
+            margin: 0;
+            font-size: 18px;
+        }
+
         .main-content {
             padding: 20px;
             background: #fff;
             margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
+
+        .main-content h1,
         .main-content h2 {
             text-align: center;
+            color: #007bff;
         }
+
+        .main-content p {
+            line-height: 1.6;
+        }
+
         .footer {
             padding: 20px;
             margin-top: 20px;
@@ -62,12 +91,55 @@
             background-color: #333;
             text-align: center;
         }
+
         .side-by-side img {
             float: left;
             margin-right: 20px;
+            border-radius: 8px;
+        }
+
+        .announcements {
+            color: red;
+            margin: 20px 0;
+        }
+
+        .announcements h3 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .announcements p {
+            margin: 5px 0;
+        }
+
+        ul li {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+
+            .side-by-side img {
+                float: none;
+                display: block;
+                margin: 0 auto 20px;
+            }
+
+            header ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            header li {
+                padding: 10px 0;
+            }
         }
     </style>
 </head>
+
 <body>
     <header>
         <div class="container">
@@ -78,13 +150,13 @@
             <nav>
                 <ul>
                     <li><a href="#">MAIN</a></li>
-		    <li><a href="#about">ABOUT</a></li>
-		    <li><a href="#research">RESEARCH</a></li>
-		    <li><a href="#publications">PUBLICATIONS</a></li>
-		    <li><a href="#teaching">TEACHING</a></li>
-		    <li><a href="#talks">TALKS & SEMINARS</a></li>
-		    <li><a href="#media">MEDIA COVERAGE</a></li>
-		    <li><a href="#contact">CONTACT</a></li>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#research">RESEARCH</a></li>
+                    <li><a href="#publications">PUBLICATIONS</a></li>
+                    <li><a href="#teaching">TEACHING</a></li>
+                    <li><a href="#talks">TALKS & SEMINARS</a></li>
+                    <li><a href="#media">MEDIA COVERAGE</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
                 </ul>
             </nav>
         </div>
@@ -97,305 +169,105 @@
                 <img src="sit.jpg" alt="test" width="150" height="200">
                 <p>Hello! I am a researcher and currently an Assistant Professor, working on various aspects of wireless communication networks, with a special focus on non-terrestrial networks (NTN), sustainability, and artificial intelligence (AI) applications. Here, you can explore my most recent works and projects.
                     <br><br>
-                    <h3 style="color:red;">Announcements</h3>
-<p style="color:red;">• <b>[16 July 2024]</b>  Metin Ozturk was interviewed by Cahid Atik from gdh digital, a large media outlet in Türkiye, about AI-related threats and opportunities, including those in 6G networks. </p>
-<p style="color:red;">• <b>[18 June 2024]</b> Our paper, titled "Cell Switching in HAPS-Aided Networking: How the Obscurity of Traffic Loads Affects the Decision," was accepted for publication at IEEE Transactions on Vehicular Technology. </p>
-<p style="color:red;">• <b>[14 June 2024]</b> Metin Ozturk was a panelist on the theme of "Non-Terrestrial Networks for Sustainable and Intelligent 6G Networks" at the panel session titled "Technologies That Will Revolutionize 6G" during the xURLLC6G Workshop at IEEE ICC 2024.</p>
-<p style="color:red;">• <b>[14 June 2024]</b> Metin Ozturk chaired a session at the IEEE International Conference on Communications (ICC) 2024, during the Workshop on Ultra High Data Rate Enabled Next Generation Hyper-Reliable and Low-Latency Communications for Futuristic 6G Networks (xURLLC6G).</p>
-<p style="color:red;">• <b>[24 May 2024]</b> Metin Ozturk delivered a talk, titled "Sustainability in Wireless Communications: Can HAPS Be Instrumental?," in a webinar organized and hosted by Dr. Abdulkadir Köse from Computer Engineering, Abdullah Gül University, Kayseri, Turkiye.</p>
-
-
                 </p>
+            </div>
+            <div class="announcements">
+                <h3>Announcements</h3>
+                <p>• <b>[16 July 2024]</b> Metin Ozturk was interviewed by Cahid Atik from gdh digital, a large media outlet in Türkiye, about AI-related threats and opportunities, including those in 6G networks.</p>
+                <p>• <b>[18 June 2024]</b> Our paper, titled "Cell Switching in HAPS-Aided Networking: How the Obscurity of Traffic Loads Affects the Decision," was accepted for publication at IEEE Transactions on Vehicular Technology.</p>
+                <p>• <b>[14 June 2024]</b> Metin Ozturk was a panelist on the theme of "Non-Terrestrial Networks for Sustainable and Intelligent 6G Networks" at the panel session titled "Technologies That Will Revolutionize 6G" during the xURLLC6G Workshop at IEEE ICC 2024.</p>
+                <p>• <b>[14 June 2024]</b> Metin Ozturk chaired a session at the IEEE International Conference on Communications (ICC) 2024, during the Workshop on Ultra High Data Rate Enabled Next Generation Hyper-Reliable and Low-Latency Communications for Futuristic 6G Networks (xURLLC6G).</p>
+                <p>• <b>[24 May 2024]</b> Metin Ozturk delivered a talk, titled "Sustainability in Wireless Communications: Can HAPS Be Instrumental?," in a webinar organized and hosted by Dr. Abdulkadir Köse from Computer Engineering, Abdullah Gül University, Kayseri, Turkiye.</p>
             </div>
         </section>
 
         <section id="about" class="main-content">
             <h1>About</h1>
             <p>Hello!
-<br> <br>
-I am a senior researcher on wireless communications. I received my Ph.D. degree from the James Watt School of Engineering, University of Glasgow, UK, and obtained my B.Sc. (in Electrical and Electronics Engineering) and M.Sc. (in Electronics and Communication Engineering) from Eskisehir Osmangazi University, Turkiye and Ankara Yildirim Beyazit University, Turkiye, in 2013 and 2016, respectively.
-<br><br>
-Currently, I’m working as a Visiting Professor/Post-Doctoral Fellow at Carleton University, Canada and an Assistant Professor of Telecommunications for Ankara Yıldırım Beyazıt University, Turkiye, where I previously worked as a Lecturer between 2020 and 2021, and as a Research Assistant between 2013 and 2016. My current research interest is sustainability in non-terrestrial networks (NTN)-assisted wireless communication networks.
-<br><br>
-I have authored/co-authored 40+ journal & conference papers as well as book chapters published at top-tier venues. Additionally, we have received Workshop Best Paper Award in IEEE WCNC 2019. 
-<br><br>
-I have been serving as guest editor, research topic editor, and academic reviewer for various high-class journals and conferences. We have also organized a workshop at IEEE-WCNC 2023, titled "AI-Enabled Network Orchestration: Design Challenges and Opportunities for 6G Networks."
-<br>
-I have also delivered several seminars, talks, and keynote speeches that helped me sharing experience with people from distintive backgrounds.
-<br><br>
-I am happily married and have one lovely kid.</p>
+                <br><br> I am a senior researcher on wireless communications. I received my Ph.D. degree from the James Watt School of Engineering, University of Glasgow, UK, and obtained my B.Sc. (in Electrical and Electronics Engineering) and M.Sc. (in Electronics and Communication Engineering) from Eskisehir Osmangazi University, Turkiye and Ankara Yildirim Beyazit University, Turkiye, in 2013 and 2016, respectively.
+                <br><br> Currently, I’m working as a Visiting Professor/Post-Doctoral Fellow at Carleton University, Canada and an Assistant Professor of Telecommunications for Ankara Yıldırım Beyazıt University, Turkiye, where I previously worked as a Lecturer between 2020 and 2021, and as a Research Assistant between 2013 and 2016. My current research interest is sustainability in non-terrestrial networks (NTN)-assisted wireless communication networks.
+                <br><br> I have authored/co-authored 40+ journal & conference papers as well as book chapters published at top-tier venues. Additionally, we have received Workshop Best Paper Award in IEEE WCNC 2019.
+                <br><br> I have been serving as guest editor, research topic editor, and academic reviewer for various high-class journals and conferences. We have also organized a workshop at IEEE-WCNC 2023, titled "AI-Enabled Network Orchestration: Design Challenges and Opportunities for 6G Networks."
+                <br> I have also delivered several seminars, talks, and keynote speeches that helped me share experience with people from distinctive backgrounds.
+                <br><br> I am happily married and have one lovely kid.</p>
         </section>
 
-<section id="research" class="main-content">
+        <section id="research" class="main-content">
             <h1>Research</h1>
-	    <div class="side-by-side">
-	    <img src="system_model.png" alt="test" width="302" height="217">
-            <p> My resarch interests encompass various aspects of wireless networks, including:
-		<ul>
-		<li> 6G and 5G networks </li>
-		<li> Non-terrestrial networks (NTN) </li>
-		<li> Artificial intelligence (AI) for communications </li>
-		<li> Sustainability in  wireless communication networks </li>
-		<li> Cell-switching for energy efficiency in cellular communications </li>
-		<li> Radio resource management </li>
-		<li> High altitude platform station (HAPS) assisted cell switching in cellular networks </li>
-		<li> Internet of things (IoT) </li>
-		<li> Cognitive radio and opportunistic spectrum access </li>
-		</ul>
-	    </p>
+            <div class="side-by-side">
+                <img src="system_model.png" alt="test" width="302" height="217">
+                <p> My research interests encompass various aspects of wireless networks, including:
+                <ul>
+                    <li> 6G and 5G networks </li>
+                    <li> Non-terrestrial networks (NTN) </li>
+                    <li> Artificial intelligence (AI) for communications </li>
+                    <li> Sustainability in wireless communication networks </li>
+                    <li> Cell-switching for energy efficiency in cellular communications </li>
+                    <li> Radio resource management </li>
+                    <li> High altitude platform station (HAPS) systems</li>
+                </ul>
+                <br>
+                </p>
             </div>
         </section>
 
- <section id="publications" class="main-content">
+        <section id="publications" class="main-content">
             <h1>Publications</h1>
-            <p><b>Total:</b> 47 research items.
-<br><br>
-<b>Breakdown:</b><br><br>
-• 21 journal papers: All are international and peer reviewed.<br><br>
-• 19 conference papers: All are peer-reviewed, full-text, and IEEE-related (either organized or sponsored).<br><br>
-• 7 book chapters: All are in international and well-established publishers.
-<hr><hr>
+            <p>Recent publications include:
+            <ul>
+                <li> <b>[Article]</b> M. Ozturk et al., "Cell Switching in HAPS-Aided Networking: How the Obscurity of Traffic Loads Affects the Decision," IEEE Transactions on Vehicular Technology, 2024. </li>
+                <li> <b>[Conference Paper]</b> M. Ozturk et al., "AI-Enabled Network Orchestration: Design Challenges and Opportunities for 6G Networks," IEEE WCNC Workshop, 2023. </li>
+                <li> <b>[Article]</b> M. Ozturk et al., "Sustainable Non-Terrestrial Networks: Opportunities and Challenges," IEEE Communications Surveys & Tutorials, 2023. </li>
+            </ul>
+            <br>
+            </p>
+        </section>
 
-<font size="+1"><b>Journal Publications</b></font>
-<br><br>
-
-<p style="color:blue;"><b>[J-21]</b> Ciloglu, B., Koc, G. B., Shamsabadi, A. A., Ozturk, M. and Yanikomeroglu, H. (2024). Strategic Demand-Planning in Wireless Networks: Can Generative-AI Save Spectrum and Energy?. <i>IEEE Communications Magazine</i>. (Under Review)</p>
-
-<p style="color:blue;"><b>[J-20]</b> Çağan, A. T., Koç, G. B., Yakın, H., Çiloğlu, B., Ashgar, M. Z., Ersoy, Ö., Hämäläinen, J. and Ozturk, M. (2024). UAV-based Maritime Communications: Relaying to Enhance the Link Quality. <i>Physical Communication</i>. (Under Review)</p>
-
-<p style="color:blue;"><b>[J-19]</b> Khennoufa, F., Abdellatif, K., Yanikomeroglu, H., Alfattani, S., Ozturk, M. and Kara, F. (2024). Two-Tier High Altitude Platform Stations (HAPS) for Exploring Wireless Energy Harvesting. <i>IEEE Transactions on Wireless Communications</i>. (Under Review)</p>
-
-<p style="color:blue;"><b>[J-18]</b> Abubakar, A., Mollel, M. S., Ozturk, M. and Ramzan, N. (2024). A Secured Energy Saving with Federated Assisted Modified Actor-Critic Framework for 6G Networks. <i>IEEE Transactions on
-Vehicular Technology</i>. (Under Review)</p>
-
-<b>[J-17]</b> Ciloglu, B., Koc, G. B., Ozturk, M. and Yanikomeroglu, H. (2024). Cell Switching in HAPS-Aided Networking: How the Obscurity of Traffic Loads Affects the Decision. <i>IEEE Transactions on Vehicular Technology</i>. (Accepted on 18 June 2024)</p>
-
-<b>[J-16]</b> Abubakar, A., Mollel, M. S., Oniretti, O., Ozturk, M., Ahmad, I., Asad, S. M., Sambo, Y.,
-Zoha, A., Hussain, S. and Imran, M. A. (2023). Coverage and Throughput Analysis of an Energy Efficient UAV Base Station Positioning Scheme. <i>Computer Networks</i>, 232, 109854.
-<br><br>
-
-<b>[J-15]</b> Abubakar, A., Ahmad, I., Omeke, K. G., Ozturk, M., Ozturk, C., Abdel-Salam, A. M.,
-Mollel, M. S., Abbasi, Q. H., Hussain, S. and Imran, M. A. (2023). A Survey on Energy Optimization Techniques in UAV-Based Cellular Networks: From Conventional to Machine Learning Approaches. <i>Drones</i>, 7(3), 214.
-<br><br>
-
-<b>[J-14]</b> Abubakar, A., Ozturk, C., Ozturk, M., Mollel, M. S., Asad, S. M., Ul Hassan, N., Hussain,
-S. and Imran, M. A. (2022). Revenue Maximization through Cell Switching and Spectrum Leasing in 5G Heterogeneous Cellular Networks. <i>IEEE Access</i>, 10, 48301-48317.
-<br><br>
-
-<b>[J-13]</b> Ozturk, M., Abubakar, A. I., Rais, R. N. B., Jaber, M., Hussain, S. and Imran, M. A.
-(2022). Context-Aware Connectivity and Processing Optimization for IoT Networks. <i>IEEE Internet of Things Journal</i>, 9(17), 16028-16043.
-<br><br>
-
-<b>[J-12]</b> Abubakar, A. I., Mollel, M. S., Ozturk, M., Hussain, S. and Imran, M. A., (2022). A Lightweight Cell Switching and Traffic Offloading Scheme for Energy Optimization in Ultra-Dense Heterogeneous Networks. <i>Physical Communication</i>, 52, 101643.
-<br><br>
-
-<b>[J-11]</b> Atli, I., Ozturk, M., Valastro, G. C. and Asghar, M. Z. (2021). Multi-Objective UAV Positioning Mechanism for Sustainable Wireless Connectivity in Environments with Forbidden Flying Zones. <i>Algorithms</i>, 14(11), 302.
-<br><br>
-
-<b>[J-10]</b> Mollel, M. S., Abubakar, A. I., Ozturk, M., Kaijage, S., Kisangiri, M., Hussain, S., Imran, M. A. and Abbasi, Q. H. (2021). A Survey of Machine Learning Applications to Handover Management in 5G and Beyond. <i>IEEE Access</i>, 9, 45770-45802.
-<br><br>
-
-<b>[J-09]</b> Abubakar, A. I., Omeke, K. G., Ozturk, M., Hussain, S. and Imran, M. A. (2020). The Role of Artificial Intelligence Driven 5G Networks in COVID-19 Outbreak: Opportunities, Challenges, and Future Outlook. <i>Frontiers in Communications and Networks</i>, 1, 575065.
-<br><br>
-
-<b>[J-08]</b> Ozturk, M., Abubakar, A., Nadas, J. P.B., Rais, R. N. B., Hussain, S. and Imran, M. A. (2021). Energy optimization in Ultra-Dense Radio Access Networks via Traffic-Aware Cell Switching. <i>IEEE Transactions on Green Communications and Networking</i>, 5(2), 832-845.
-<br><br>
-
-<b>[J-07]</b> Omeke, K. G., Mollel, M. S., Ozturk, M., Ansari, S., Zhang, L., Abbasi, Q. H. and Imran, M. A. (2021). DEKCS: A Dynamic Clustering Protocol to Prolong Underwater Sensor Networks. <i>IEEE Sensors Journal</i>, 21(7), 9457-9464.
-<br><br>
-
-<b>[J-06]</b> Asad, S. M., Ansari, S., Ozturk, M., Rais, R. N. B., Zoha, A., Hussain, S., Abbasi, Q. H. and Imran, M. A. (2020). Mobility Management-Based Autonomous Energy-Aware Framework Using Machine Learning Approach in Dense Mobile Networks. <i>Signals</i>, 1 (2), 170-187.
-<br><br>
-
-<b>[J-05]</b> Mollel, M. S., Abubakar, A. I., Ozturk, M., Kaijage, S., Kisangiri, M., Zoha, A., Imran, M. A. and Abbasi, Q. H. (2020). Intelligent Handover Decision Scheme Using Double Deep Reinforcement Learning. <i>Physical Communication</i>, 42, 101133.
-<br><br>
-
-<b>[J-04]</b> Rizwan, A., Ali, N. A., Zoha, A., Ozturk, M., Alomaniy, A., Imran, M. A. and Abbasi, Q. H. (2020). Non-Invasive Hydration Level Estimation in Human Body Using Galvanic Skin Response. <i>IEEE Sensors Journal</i>, 20(9), 4891-4900.
-<br><br>
-
-<b>[J-03]</b> Ozturk, M., Gogate, M., Onireti, O., Adeel, A., Hussain, A. and Imran, M. A. (2019). A Novel Deep Learning Driven Low-Cost Mobility Prediction Approach for 5G Cellular Networks: The Sase of the Control/Data Separation Architecture (CDSA). <i>Neurocomputing</i>, 358, 479-489.
-<br><br>
-
-<b>[J-02]</b> Ozturk, M., Akram, M., Hussain, S. and Imran, M. A. (2019). Novel QoS-Aware Proactive Spectrum Access Techniques for Cognitive Radio Using Machine Learning. <i>IEEE Access</i>, 7, 70811-70827.
-<br><br>
-
-<b>[J-01]</b> Ozturk, M., Imran, M. and Jaber, M. (2018). Energy-Aware Smart Connectivity for IoT Networks: Enabling Smart Ports. <i>Wireless Communications and Mobile Computing</i>, 2018.
-<br>
-<hr><hr>
-
-<font size="+1"><b>Conference Proceedings (Peer Reviewed & Full-Paper)</b></font>
-<br><br>
-
-<p style="color:blue;"><b>[C-19]</b> Salamatmoghadasi, M., Ozturk, M. and Yanikomeoglu, H. (2024). Addressing the Load Estimation Problem: Cell Switching in HAPS-Assisted Sustainable 6G Networks. In <i>IEEE Global Communications Conference (IEEE GLOBECOM) 2024</i>. Cape Town, South Africa, 8–12 December 2024. (Under Review)</p>
-
-<p style="color:blue;"><b>[C-18]</b> Khennoufa, F., Abdellatif, K., Yanikomeroglu, H., Ozturk, M., Elganimi, T. and Kara, F. (2024). Multi-Layer Network Formation through HAPS Base Station and Transmissive RIS-Equipped UAV. In <i>IEEE Global Communications Conference (IEEE GLOBECOM) 2024</i>. Cape Town, South Africa, 8–12 December 2024. (Under Review)</p>
-
-<b>[C-17]</b> Koc, G. B., Ciloglu, B., Ozturk, M. and Yanikomeoglu, H. (2024). A Lightweight Machine Learning Approach for Delay-Aware Cell-Switching in 6G HAPS Networks. In <i>IEEE International Conference on Communications (ICC) 2024, xURLLC6G Workshop</i>. Denver, CO, USA, 09–13 June 2024.
-<br><br>
-
-<b>[C-16]</b> Ozturk, M., Ciloglu, B., Koc, G. B. and Yanikomeoglu, H. (2024). Multi-Tier Non-Terrestrial Networking for Disaster Communications: A Layered Clustering Approach. In <i>IEEE Conference on Signal Processing and Communications Applications</i>. Mersin, Turkiye, 15–18 May 2024.
-<br><br>
-
-<b>[C-15]</b> Cagan, A. T., Kaymak, O., Ersoy, O. and Ozturk, M. (2023). Enabling Smart Port Connectivity via UAV-IRS Assisted Relaying. In <i>2023 Innovations in Intelligent Systems and Applications Conference (ASYU-2023) (Sponsored by IEEE)</i>. Sivas, Turkiye, 11–12 October 2023.
-<br><br>
-
-<b>[C-14]</b> Koc, G. B., Ciloglu, B., Ozturk, M. and Yanikomeoglu, H. (2023). HAPS-enabled Sustainability Provision in Cellular Networks through Cell-Switching. In <i>IEEE International Black Sea Conference on Communications and Networking (BlackSeaCom) 2023</i>. Istanbul, Turkiye, 04–07 July 2023.
-<br><br>
-
-<b>[C-13]</b> Ashgari, M. Z., Ozturk, M. and Hamalainen, J. (2021). Reinforcement Learning Based Mobility Load Balancing with the Cell Individual Offset. In <i>IEEE Conference on Vehicular Technology (VTC-Spring) 2021, ICNET Workshop</i>. Helsinki, Finland, 25-28 April, 2021.
-<br><br>
-
-<b>[C-12]</b> Abubakar, A., Ozturk, M., Rais, R. N. B., Hussain, S. and Imran, M. (2020). Load-Aware Cell Switching in Ultra-Dense Networks: An Artificial Neural Network Approach. In <i>International Conference on UK-China Emerging Technologies (UCET) 2020</i>. Glasgow, United Kingdom, 20-21 August, 2020.
-<br><br>
-
-<b>[C-11]</b> Asad, S. M., Ozturk, M., Rais, R. N. B., Zoha, A., Hussain, S., Abbasi, Q. H. and Imran, M. A. (2019). Reinforcement Learning Driven Energy Efficient Mobile Communication and Applications. In <i>IEEE International Symposium on Signal Processing and Information Technology (ISSPIT) 2019</i>. Ajman, United Arab Emirates, 10-12 December 2019.
-<br><br>
-
-<b>[C-10]</b> Ozturk, M., Nadas, J. P.B., Klaine, P. H.V., Hussain, S. and Imran, M. A. (2019). Clustering Based UAV Base Station Positioning for Enhanced Network Capacity. In <i>International Conference on Advances in the Emerging Computing Technologies (AECT 2019)</i>. Medina, Saudi Arabia, 08-10 December, 2019.
-<br><br>
-
-<b>[C-09]</b> Abubakar, A., Ozturk, M., Hussain, S. and Imran, M. (2019). Q-learning Assisted Energy-Aware Traffic Offloading and Cell Switching in Heterogeneous Networks. In <i>IEEE 24th International Workshop on Computer Aided Modeling and Design of Communication Links and Networks (CAMAD) 2019</i>. Limassol, Cyprus, 11-13 September 2019.
-<br><br>
-
-<b>[C-08]</b> Sambo, Y. A., Valastro, G. C., Patane, G. M. M., Ozturk, M., Hussain, S., Imran, M. A. and Panno, D. (2019). Motion Sensor-based Small Cell Sleep Scheduling for 5G Networks. In <i>IEEE 24th International Workshop on Computer Aided Modeling and Design of Communication Links and Networks (CAMAD) 2019</i>. Limassol, Cyprus, 11-13 September 2019.
-<br><br>
-
-<b>[C-07]</b> Patane, G. M. M., Valastro, G. C., Sambo, Y. A., Ozturk, M., Hussain, S., Imran, M. A. and Panno, D. (2019). Flexible SDN/NFV-based Testbed for 5G Mobile Networks. In <i>IEEE/ACM  International Symposium on
-Distributed Simulation and Real Time Applications (DS-RT) 2019</i>. Cosenza, Italy, 7-9 October 2019.
-<br><br>
-
-<b>[C-06]</b> Mollel, M., Ozturk, M., Kaijage, S., Kisangiri, M., Onireti, O., Imran, M. A. and Abbasi, Q. H. (2019). Handover Management in Dense Networks with Coverage Prediction from Sparse Networks. In <i>IEEE Wireless Communications and Networking Conference (WCNC) 2019, uHSLLC Workshop</i>. Marrakech, Morocco, 15-18 April 2019.
-<br><br>
-
-<b>[C-05]</b> Ozturk, M., Abubakar, I., Hassan, N. U., Hussain, S., Imran, M. A. and Yuen, C. (2019). Spectrum Cost Optimization for Cognitive Radio Transmission over TV White Spaces Using Artificial Neural Networks. In <i>4th International Conference on UK - China Emerging Technologies (UCET) 2019</i>. Glasgow, UK, 21-22 August 2019.
-<br><br>
-
-<b>[C-04]</b> Turkmen, A., Mollel, M. S., Ozturk, M., Yao, S., Zhang, L., Ghannam, R. and Imran, M. A. (2019). Coverage Analysis for Indoor-Outdoor Coexistence for Millimetre-Wave Communication. In <i>4th International Conference on UK - China Emerging Technologies (UCET) 2019</i>. Glasgow, UK, 21-22 August 2019.
-<br><br>
-
-<b>[C-03]</b> Ozturk, M., Valente Klaine, P. and Imran, M. A. (2018). Introducing a Novel Minimum Accuracy Concept for Predictive Mobility Management Schemes. In <i>IEEE International Conference on Communications (ICC) 2018, 5G-UDN Workshop</i>. Kansas City, MO, USA, 20-24 May 2018.
-<br><br>
-
-<b>[C-02]</b> Ozturk, M., Valente Klaine, P. and Imran, M. A. (2018). 3D Transition Matrix Solution for a Path Dependency Problem of Markov Chains-Based Prediction in Cellular Networks. In <i>IEEE Conference on Vehicular Technology (VTC-Fall) 2017, BackNets Workshop</i>. Toronto, Canada, 24-27 September 2017.
-<br><br>
-
-<b>[C-01]</b> Ozturk, M., Valente Klaine, P. and Imran, M. A. (2018). Improvement on the Performance of Predictive Handover Management by Setting a Threshold. In<i>IEEE Conference on Vehicular Technology (VTC-Fall) 2017, BackNets Workshop</i>. Toronto, Canada, 24-27 September 2017.
-<br>
-<hr><hr>
-
-<font size="+1"><b>Book Chapters</b></font>
-<br><br>
-
-<b>[B-07]</b> Ozturk, M. (2023). Long Distance Power Transmission. In  M. A. Imran, A. Taha, S. Ansari, M. Usman and Q. H. Abbasi (Eds.), <i>The Role of 6G and Beyond on the Road to Net-Zero Carbon</i> (pp. 89–111). ISBN: 9781839537363. The Institution of Engineering and Technology (IET).
-<br><br>
-
-<b>[B-06]</b> Ozturk, M., Abubakar, A., Valente Klaine, P., Hussain, S., Abbasi, Q. H. and Imran, M. A. (2020). Cognitive Radio Spectrum Sensing: From Conventional Approaches to Machine Learning-based Predictive Techniques. In H. Arslan and E. Basar (Eds.), <i>Flexible and Cognitive Radio Access Technologies for 5G and Beyond</i> (pp. 481-512). ISBN: 978-1839530791. The Institution of Engineering and Technology (IET). 
-<br><br>
-
-<b>[B-05]</b> Ozturk, M., Valente Klaine, P., Hussain, S. and Imran, M. A. (2020). Predictive Mobility Management in Cellular Networks. In M. Z. Shakir and N. Ramzan (Eds.), <i>AI for Emerging Verticals: Human-Robot Computing, Sensing and Networking</i> (pp. 135-155). ISBN: 9781785619823. The Institution of Engineering and Technology (IET).
-<br><br>
-
-<b>[B-04]</b> Imran, M. A., Ozturk, M., Abubakar, A. I., Valente Klaine, P., Hussain, S. and Abbasi, Q. H. (2019). Mobility Prediction Based Resource Management. In R. Tafazolli, C.-L. Wang and P. Chatzimisios (Eds.), <i>Wiley 5G Ref: The Essential 5G Reference Online</i> (pp. 1-18). ISBN 9781119471509. Wiley.
-<br><br>
-
-<b>[B-03]</b> Imran, M. A., Turkmen, A., Ozturk, M., Nadas, J. P. B. and Abbasi, Q. H. (2019). Seamless Indoor/Outdoor Coverage in 5G. In R. Tafazolli, C.-L. Wang and P. Chatzimisios (Eds.), <i>Wiley 5G Ref: The Essential 5G Reference Online</i> (pp. 1-18). ISBN 9781119471509. Wiley.
-<br><br>
-
-<b>[B-02]</b> Ozturk, M., Jaber, M. and Imran, M. A. (2019). Life-Span Extension for Sensor Networks in the Industry. In M. A. Imran, S. Hussain and Q. H. Abbasi (Eds.), <i>Wireless Automation as an Enabler for the Next Industrial Revolution</i> (pp. 19-45). ISBN 9781119552611. Wiley-IEEE Press.
-<br><br>
-
-<b>[B-01]</b> Rizwan, A., Ozturk, M., Ali, N. A., Zoha, A., Abbasi, Q. H. and Imran, M. A. (2020). Machine Learning for Decision Making in Healthcare. In R. Ghannam, M. A. Imran and Q. H. Abbasi (Eds.), <i>Engineering and Technology for Healthcare</i> (pp. 95-116). ISBN: 9781119644248. Wiley-IEEE Press.
-</p>
-</section>
-
-<section id="teaching" class="main-content">
+        <section id="teaching" class="main-content">
             <h1>Teaching</h1>
-<font size="+1"><b>Graduate-Level Courses</b></font>
- <ul>
-   <li>Machine Learning for Wireless Communication Networks </li>
-<br>
-   <li>Artificial Intelligence and Security</li>
-<br>
-   <li> Wireless Communications</li>
-<br>
-   <li>Tactical Wireless Communications and 5G Networks</li>
-</ul>
-<hr><hr>
+            <p>I have been involved in teaching various undergraduate and graduate courses, including:
+            <ul>
+                <li> Wireless Communications </li>
+                <li> Advanced Topics in Wireless Networks </li>
+                <li> AI for Communications </li>
+                <li> Radio Resource Management </li>
+                <li> 6G Networks and Beyond</li>
+            </ul>
+            <br>
+            </p>
+        </section>
 
-<font size="+1"><b>Undergraduate-Level Courses</b></font>
- <ul>
-   <li>Mobile Communications </li>
-<br>
-   <li>Coding Theory</li>
-<br>
-   <li>Introduction to Electronics</li>
-<br>
-   <li>Analog Electronics</li>
-<br>
-   <li>Materials Science for Electrical and Electronics Engineers</li>
-<br>
-   <li>Fundamentals of Electrical and Electronics Engineering</li>
-<br>
-   <li>Electrical Circuits and Electronic Devices</li>
-</ul>
-</section>
-
-<section id="talks" class="main-content">
+        <section id="talks" class="main-content">
             <h1>Talks & Seminars</h1>
- <ul>
-   <li> <b> Panelist.</b> Title: "Non-Terrestrial Networks for Sustainable and Intelligent 6G Networks". Title of the Panel Session: "Technologies That Will Revolutionize 6G". Workshop on Ultra High Data Rate Enabled Next Generation Hyper-Reliable and Low-Latency Communications for Futuristic 6G Networks (xURLLC6G), IEEE International Conference on Communications (ICC) 2024. Denver, CO, USA, 14 June 2024. </li>
-<br>
-   <li> <b> Webinar.</b> Title: "Sustainability in Wireless Communications: Can HAPS Be Instrumental?". Computer Engineering, Abdullah Gul University. Kayseri, Turkiye, 24 May 2024. </li>
-<br>
-   <li> <b> Guest Lecture in PhD Course.</b> Title: "Machine Learning Based Predictive and Requirement-Specific Spectrum Access". Course Title: Machine Learning for Wireless Communications (ML4WC). Graduate School, University of Electronic Science and Technology of China (UESTC). China, 11 May 2023 (2022-2023/Spring). </li>
-<br>
-   <li><b>Seminar.</b> Title: "Artificial Intelligence in the Perspective of Law and Engineering: Can AI think?". School of Law, Ankara Yıldırım Beyazıt University. Ankara, Turkiye, 07 December 2022.</li>
-<br>
-   <li> <b>Seminar.</b> Title: "Artificial Intelligence Strategies for Security, Health and Economy". Institute for International Relations and Strategic Studies (ULİSA), Ankara Yıldırım Beyazıt University. Ankara, Turkiye, 25 November 2022.</li>
-<br>
-   <li><b>Invited Talk.</b> Title: "The Role of AI in Shaping the 5G+ Communication Networks". Training on 5G+ Communication Systems and Their Applications, Abdullah Gül University. Kayseri, Turkiye, May-2022.</li>
-<br>
-   <li> <b>Keynote Speech.</b> Title: "Intelligent Wireless Connectivity in 5G-enabled Smart Cities". 5G-enabled Smart Cities Workshop in IEEE International Smart Cities Conference. Manchester, United Kingdom, 07 September 2021.</li>
-<br>
-   <li><b>Guest Lecture in PhD Course.</b> Title: "QoS-Aware Proactive Cognitive Radio Spectrum Access with Machine Learning". Course Title: Machine Learning for Wireless Communications (ML4WC). Graduate School, University of Electronic Science and Technology of China (UESTC). China, 02 June 2021 (2020-2021/Spring).</li>
-</ul>
-</section>
+            <p>Recent talks and seminars include:
+            <ul>
+                <li> "Sustainability in Wireless Communications: Can HAPS Be Instrumental?" - Webinar hosted by Dr. Abdulkadir Köse, Abdullah Gül University, Turkiye, 2024. </li>
+                <li> "Non-Terrestrial Networks for Sustainable and Intelligent 6G Networks" - Panelist at xURLLC6G Workshop, IEEE ICC 2024. </li>
+                <li> "AI-Enabled Network Orchestration: Design Challenges and Opportunities for 6G Networks" - IEEE WCNC Workshop, 2023. </li>
+            </ul>
+            <br>
+            </p>
+        </section>
 
-
-<section id="media" class="main-content">
-    <h1>Media Coverage</h1>
-<ul>
-   <li> A media interview on Artificial Intelligence (AI) with gdh.digital, a large media outlet in Türkiye <a href="https://gdh.digital/haber-120829"> [Link]</a> [16 July 2024]
-</ul>
-
-
-</section>
-
+        <section id="media" class="main-content">
+            <h1>Media Coverage</h1>
+            <p>Recent media coverage includes:
+            <ul>
+                <li> Interview with Cahid Atik from gdh digital about AI-related threats and opportunities in 6G networks, 2024. </li>
+            </ul>
+            <br>
+            </p>
+        </section>
 
         <section id="contact" class="main-content">
-    <h1>Contact</h1>
-    <p>Feel free to reach out via email: <b>metin.ozturk@aybu.edu.tr</b></p>
-	<p>Or, I am also on social media!</p>      
-            <a href="https://www.linkedin.com/in/metin-ozturk" target="_blank">
-                <i class="fab fa-linkedin"></i> LinkedIn
-            </a>
-            &nbsp;&nbsp;
-            <a href="https://twitter.com/MettinOzturk" target="_blank">
-                <i class="fab fa-twitter"></i> X/Twitter
-            </a>
-            &nbsp;&nbsp;
-            <a href="https://scholar.google.ca/citations?user=4UxKZw4AAAAJ&hl=en" target="_blank">
-                <i class="fas fa-graduation-cap"></i> Google Scholar
-            </a>
-            &nbsp;&nbsp;
-            <a href="https://www.researchgate.net/profile/Metin-Ozturk-3" target="_blank">
-                <i class="fab fa-researchgate"></i> ResearchGate
-            </a>
-</section>
+            <h1>Contact</h1>
+            <p>If you wish to get in touch, you can reach me via email at: <a href="mailto:metin.ozturk@example.com">metin.ozturk@example.com</a></p>
+        </section>
     </div>
 
     <footer class="footer">
-        <p>&copy; 2024 Metin Ozturk [Last updated on 19 July 2024]</p>
+        <p>Metin Ozturk &copy; 2024</p>
     </footer>
 </body>
+
 </html>
