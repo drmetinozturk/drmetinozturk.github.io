@@ -1,568 +1,558 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Metin Ozturk - Personal Web Page</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f9fa;
-            color: #333;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Metin Ozturk, PhD, SMIEEE</title>
+<meta name="description" content="Metin Ozturk — Assistant Professor of Telecommunications. Wireless communications, non-terrestrial networks (NTN), HAPS, 6G, and AI.">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
 
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-        header {
-            background: linear-gradient(90deg, #007bff, #6610f2);
-            color: #fff;
-            padding: 20px 0;
-            border-bottom: #6610f2 3px solid;
-        }
+<style>
+  :root{
+    --ink:#16202e;          /* primary text — deep atmospheric near-black */
+    --ink-soft:#475467;     /* secondary text */
+    --muted:#6b7886;        /* captions, meta */
+    --sky-deep:#143a5e;     /* headings */
+    --sky:#1f5c97;          /* links */
+    --sky-bright:#2f7bc4;   /* hover / active */
+    --horizon:#b9742b;      /* the single warm accent — used with restraint */
+    --slate:#5b6b7d;        /* "under review" accent */
+    --bg:#eef2f6;           /* page */
+    --panel:#ffffff;        /* cards */
+    --line:#dde4ec;         /* hairlines */
+    --line-soft:#eaeff4;
+    --shadow:0 1px 2px rgba(20,40,70,.04), 0 8px 28px -18px rgba(20,40,70,.28);
+    --maxw:980px;
+    --nav-h:60px;
+    --serif:"Newsreader", Georgia, "Times New Roman", serif;
+    --sans:"IBM Plex Sans", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    --mono:"IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
 
-        header a {
-            color: #fff;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 16px;
-            transition: color 0.3s;
-        }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:var(--sans); font-size:16px; line-height:1.62;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  a{color:var(--sky); text-decoration:none;}
+  a:hover{color:var(--sky-bright); text-decoration:underline; text-underline-offset:2px;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px;}
 
-        header a:hover {
-            color: #ffd700;
-        }
+  /* ---------- top navigation ---------- */
+  .nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(255,255,255,.86); backdrop-filter:saturate(140%) blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:var(--maxw); margin:0 auto; padding:0 24px;
+    height:var(--nav-h); display:flex; align-items:center; justify-content:space-between; gap:16px;
+  }
+  .nav-name{
+    font-family:var(--serif); font-weight:600; font-size:1.06rem; color:var(--sky-deep);
+    letter-spacing:.2px; white-space:nowrap;
+  }
+  .nav-name a{color:inherit;}
+  .nav-name a:hover{text-decoration:none; color:var(--sky);}
+  .nav-links{display:flex; gap:2px; list-style:none; margin:0; padding:0;}
+  .nav-links a{
+    display:block; font-family:var(--mono); font-size:.72rem; letter-spacing:.08em;
+    text-transform:uppercase; color:var(--ink-soft); padding:8px 10px; border-radius:6px;
+    position:relative;
+  }
+  .nav-links a:hover{color:var(--sky-deep); background:var(--line-soft); text-decoration:none;}
+  .nav-links a.active{color:var(--sky-deep);}
+  .nav-links a.active::after{
+    content:""; position:absolute; left:10px; right:10px; bottom:2px; height:2px;
+    background:var(--horizon); border-radius:2px;
+  }
+  .nav-toggle{
+    display:none; background:none; border:1px solid var(--line); color:var(--sky-deep);
+    width:40px; height:36px; border-radius:8px; font-size:1.1rem; cursor:pointer;
+  }
 
-        header ul {
-            padding: 0;
-            list-style: none;
-            display: flex;
-            justify-content: center;
-        }
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative; overflow:hidden;
+    background:
+      radial-gradient(120% 90% at 80% -10%, rgba(47,123,196,.12), transparent 60%),
+      linear-gradient(180deg, #f6f9fc 0%, var(--bg) 100%);
+    border-bottom:1px solid var(--line);
+  }
+  /* faint atmosphere bands — the "altitude" signature */
+  .hero::before{
+    content:""; position:absolute; inset:0; pointer-events:none; opacity:.5;
+    background:repeating-linear-gradient(180deg,
+      transparent 0, transparent 62px,
+      rgba(31,92,151,.05) 62px, rgba(31,92,151,.05) 63px);
+    mask-image:linear-gradient(180deg, transparent, #000 30%, #000 70%, transparent);
+  }
+  .hero-grid{
+    position:relative; display:grid; grid-template-columns:1fr auto; gap:40px;
+    align-items:center; padding:54px 0 46px;
+  }
+  .eyebrow{
+    font-family:var(--mono); font-size:.72rem; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--horizon); margin:0 0 14px; display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{content:""; width:22px; height:1px; background:var(--horizon); display:inline-block;}
+  .hero h1{
+    font-family:var(--serif); font-weight:600; font-size:clamp(2.1rem,5vw,3.1rem);
+    line-height:1.05; letter-spacing:-.01em; color:var(--sky-deep); margin:0 0 12px;
+  }
+  .hero .tagline{
+    font-family:var(--mono); font-size:.82rem; letter-spacing:.04em; color:var(--ink-soft);
+    margin:0 0 20px;
+  }
+  .hero .lede{font-size:1.05rem; color:var(--ink-soft); max-width:54ch; margin:0 0 24px;}
+  .portrait{
+    width:170px; height:212px; object-fit:cover; border-radius:10px;
+    border:5px solid #fff; box-shadow:var(--shadow); background:#dde4ec;
+  }
+  .quicklinks{display:flex; flex-wrap:wrap; gap:8px;}
+  .chip{
+    display:inline-flex; align-items:center; gap:8px; font-size:.86rem; font-weight:500;
+    padding:7px 13px; border-radius:999px; border:1px solid var(--line);
+    background:#fff; color:var(--sky-deep); box-shadow:var(--shadow);
+  }
+  .chip:hover{border-color:var(--sky-bright); color:var(--sky-bright); text-decoration:none; transform:translateY(-1px);}
+  .chip i{font-size:.95rem; color:var(--sky);}
+  .chip:hover i{color:var(--sky-bright);}
 
-        header li {
-            display: inline;
-            padding: 0 20px;
-            position: relative;
-        }
+  /* stats strip */
+  .stats{
+    position:relative; display:flex; flex-wrap:wrap; gap:30px;
+    padding:18px 0 30px; border-top:1px solid var(--line);
+  }
+  .stat .num{font-family:var(--serif); font-size:1.9rem; font-weight:600; color:var(--sky-deep); line-height:1;}
+  .stat .lab{font-family:var(--mono); font-size:.68rem; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); margin-top:6px;}
 
-        header li:hover .dropdown {
-            display: block;
-        }
+  /* ---------- sections ---------- */
+  section{scroll-margin-top:calc(var(--nav-h) + 14px);}
+  .panel{
+    background:var(--panel); border:1px solid var(--line); border-radius:14px;
+    box-shadow:var(--shadow); padding:34px 38px; margin:26px 0;
+  }
+  .sec-head{display:flex; align-items:baseline; gap:14px; margin:0 0 18px;}
+  .sec-head h2{
+    font-family:var(--serif); font-weight:600; font-size:1.7rem; color:var(--sky-deep);
+    margin:0; letter-spacing:-.01em;
+  }
+  .sec-head .idx{font-family:var(--mono); font-size:.74rem; color:var(--horizon); letter-spacing:.1em;}
+  .sec-head::after{content:""; flex:1; height:1px; background:var(--line); align-self:center;}
+  .panel p{margin:0 0 14px;}
+  .panel p:last-child{margin-bottom:0;}
 
-        header .dropdown {
-            display: none;
-            position: absolute;
-            background: #007bff;
-            padding: 10px;
-            top: 40px;
-            left: 0;
-            width: 200px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
+  .subhead{
+    font-family:var(--mono); font-size:.78rem; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--sky-deep); margin:26px 0 14px; padding-bottom:8px; border-bottom:1px solid var(--line);
+    display:flex; align-items:center; justify-content:space-between; gap:12px;
+  }
+  .subhead .count{color:var(--muted);}
 
-        header .dropdown li {
-            display: block;
-            padding: 10px;
-            text-align: left;
-        }
+  /* about layout */
+  .about-photo-wrap{display:grid; grid-template-columns:1fr; gap:0;}
 
-        header #branding {
-            text-align: center;
-        }
+  /* research */
+  .research-grid{display:grid; grid-template-columns:auto 1fr; gap:28px; align-items:start;}
+  .research-grid img{width:302px; max-width:100%; height:auto; border-radius:10px; border:1px solid var(--line); box-shadow:var(--shadow);}
+  ul.bullets{margin:6px 0 0; padding:0; list-style:none;}
+  ul.bullets li{position:relative; padding:5px 0 5px 22px; border-bottom:1px solid var(--line-soft);}
+  ul.bullets li:last-child{border-bottom:none;}
+  ul.bullets li::before{content:""; position:absolute; left:2px; top:13px; width:7px; height:7px; border-radius:50%; background:var(--sky); opacity:.7;}
 
-        header #branding h1 {
-            margin: 0;
-            font-size: 24px;
-        }
+  /* publications */
+  .pub-jump{display:flex; flex-wrap:wrap; gap:8px 18px; font-family:var(--mono); font-size:.78rem; margin:4px 0 2px;}
+  .pub-jump a{color:var(--ink-soft);}
+  .pub-summary{display:flex; flex-wrap:wrap; gap:10px 26px; margin:2px 0 6px;}
+  .pub-summary .s{font-size:.92rem; color:var(--ink-soft);}
+  .pub-summary .s b{font-family:var(--mono); color:var(--sky-deep); font-weight:600;}
 
-        header #branding h4 {
-            margin: 0;
-            font-size: 18px;
-        }
+  ol.pubs{list-style:none; margin:0; padding:0;}
+  ol.pubs li{
+    display:grid; grid-template-columns:64px 1fr; gap:16px; align-items:start;
+    padding:14px 14px 14px 0; border-bottom:1px solid var(--line-soft);
+  }
+  ol.pubs li:last-child{border-bottom:none;}
+  .tag{
+    font-family:var(--mono); font-size:.74rem; font-weight:500; color:var(--sky-deep);
+    background:var(--line-soft); border:1px solid var(--line); border-radius:6px;
+    padding:3px 0; text-align:center; letter-spacing:.02em;
+  }
+  .cite{font-size:.96rem; color:var(--ink); line-height:1.55;}
+  .cite i{color:var(--ink-soft);}
+  /* status accents — applied only to in-press / under-review items */
+  li.st-accepted{background:linear-gradient(90deg, rgba(185,116,43,.06), transparent 40%); border-left:3px solid var(--horizon); padding-left:13px; border-radius:6px;}
+  li.st-accepted .tag{background:rgba(185,116,43,.12); border-color:rgba(185,116,43,.4); color:#8a531c;}
+  li.st-review{background:linear-gradient(90deg, rgba(91,107,125,.07), transparent 40%); border-left:3px solid var(--slate); padding-left:13px; border-radius:6px;}
+  li.st-review .tag{background:rgba(91,107,125,.12); border-color:rgba(91,107,125,.4); color:#475260;}
 
-        .main-content {
-            padding: 20px;
-            background: #fff;
-            margin-top: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+  /* teaching */
+  .teach-grid{display:grid; grid-template-columns:1fr 1fr; gap:30px;}
 
-        .main-content h1,
-        .main-content h2 {
-            text-align: center;
-            color: #007bff;
-        }
+  /* talks */
+  ol.talks{list-style:none; margin:0; padding:0;}
+  ol.talks li{padding:13px 0; border-bottom:1px solid var(--line-soft);}
+  ol.talks li:last-child{border-bottom:none;}
+  .talk-kind{
+    font-family:var(--mono); font-size:.7rem; letter-spacing:.06em; text-transform:uppercase;
+    color:#fff; background:var(--sky-deep); padding:2px 8px; border-radius:5px; margin-right:8px;
+    display:inline-block; vertical-align:1px;
+  }
 
-        .main-content p {
-            line-height: 1.6;
-        }
+  /* news */
+  ul.news{list-style:none; margin:0; padding:0;}
+  ul.news li{display:grid; grid-template-columns:130px 1fr; gap:16px; padding:12px 0; border-bottom:1px solid var(--line-soft);}
+  ul.news li:last-child{border-bottom:none;}
+  .news-date{font-family:var(--mono); font-size:.78rem; color:var(--horizon);}
 
-        .footer {
-            padding: 20px;
-            margin-top: 20px;
-            color: #fff;
-            background-color: #333;
-            text-align: center;
-        }
+  /* media / contact */
+  ul.plain{list-style:none; margin:0; padding:0;}
+  ul.plain li{padding:8px 0;}
+  .contact-links{display:flex; flex-wrap:wrap; gap:10px; margin-top:16px;}
 
-        .side-by-side img {
-            float: left;
-            margin-right: 20px;
-            border-radius: 8px;
-        }
+  /* footer */
+  footer{
+    background:var(--sky-deep); color:#cdd9e6; text-align:center; padding:26px 0; margin-top:30px;
+    font-size:.9rem;
+  }
+  footer .updated{font-family:var(--mono); font-size:.76rem; color:#9db4cb;}
 
-        .announcements {
-            color: red;
-            margin: 20px 0;
-        }
+  /* back to top */
+  #toTop{
+    position:fixed; right:20px; bottom:20px; width:44px; height:44px; border-radius:50%;
+    background:var(--sky-deep); color:#fff; border:none; cursor:pointer; box-shadow:var(--shadow);
+    opacity:0; pointer-events:none; transition:opacity .25s, transform .25s; font-size:1rem; z-index:60;
+  }
+  #toTop.show{opacity:1; pointer-events:auto;}
+  #toTop:hover{background:var(--sky-bright);}
 
-        .announcements h3 {
-            margin: 0;
-            font-size: 20px;
-        }
-
-        .announcements p {
-            margin: 5px 0;
-        }
-
-        ul li {
-            list-style-type: disc;
-            margin-left: 20px;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                width: 95%;
-            }
-
-            .side-by-side img {
-                float: none;
-                display: block;
-                margin: 0 auto 20px;
-            }
-
-            header ul {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            header li {
-                padding: 10px 0;
-            }
-        }
-    </style>
+  /* ---------- responsive ---------- */
+  @media (max-width:860px){
+    .hero-grid{grid-template-columns:1fr; gap:26px;}
+    .portrait{width:140px; height:174px;}
+    .research-grid{grid-template-columns:1fr;}
+    .research-grid img{width:100%; max-width:360px;}
+    .teach-grid{grid-template-columns:1fr; gap:8px;}
+    .nav-toggle{display:block;}
+    .nav-links{
+      position:absolute; top:var(--nav-h); left:0; right:0; flex-direction:column; gap:0;
+      background:#fff; border-bottom:1px solid var(--line); padding:6px 14px 12px;
+      box-shadow:var(--shadow); display:none;
+    }
+    .nav-links.open{display:flex;}
+    .nav-links a{padding:11px 8px;}
+    .nav-links a.active::after{left:8px; right:auto; width:18px;}
+    .panel{padding:24px 20px;}
+    ul.news li{grid-template-columns:1fr; gap:2px;}
+    ol.pubs li{grid-template-columns:54px 1fr; gap:12px;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    #toTop{transition:none;}
+    .chip:hover{transform:none;}
+  }
+</style>
 </head>
-
 <body>
-    <header>
-        <div class="container">
-            <div id="branding">
-                <h1>Metin Ozturk, PhD, SMIEEE</h1>
-                <h4>Wireless Communications | Non-Terrestrial Networks | 6G | AI</h4>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#">MAIN</a></li>
-                    <li><a href="#about">ABOUT</a></li>
-                    <li><a href="#research">RESEARCH</a></li>
-                    <li><a href="#publications">PUBLICATIONS</a></li>
-                    <li><a href="#teaching">TEACHING</a></li>
-                    <li><a href="#talks">TALKS</a></li>
-                    <li><a href="#media">MEDIA</a></li>
-		    <li><a href="#blog">BLOG</a></li>
-                    <li><a href="#contact">CONTACT</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <div class="container">
-        <section class="main-content">
-            <h1>Welcome!</h1>
-            <div class="side-by-side">
-                <img src="sit.jpg" alt="test" width="150" height="200">
-                <p>Hello! I am a researcher and currently an Assistant Professor, working on various aspects of wireless communication networks, with a special focus on non-terrestrial networks (NTN), sustainability, and artificial intelligence (AI) applications. Here, you can explore my most recent works and projects.
-                    <hr><hr>
-<h3 style="color:green;">Announcements</h3>
-<p style="color:green;">• <b>[07 June 2026]</b>  We attended IEEE International Conference on Communications (IEEE ICC 2026) in Glasgow, UK, from May 24 to 27, 2026, where our AYBU NTN-Lab presented three papers.</p>
-<p style="color:green;">• <b>[28 December 2025]</b>  I delivered a tutorial titled "Towards Sustainable 6G: The Role of Non-Terrestrial Networks in Intelligent Green Communication Systems" at 2025 International Conference on Engineering and Computing Technologies (EngiTek 2025), Irbid, Jordan. </p>
-<p style="color:green;">• <b>[05 August 2025]</b>  I was a speaker at XCHANGING IDEAS #64: Global 5G Evolution, delivering my talk titled "Internet Above the Clouds: The Promise of High-Altitude Platform Stations (HAPS)." </p>
-<p style="color:green;">• <b>[25 June 2025]</b>  We delivered a tutorial titled "6G and Beyond Wireless Communication Systems with High Altitude Platform Stations (HAPS)", co-presented with Cihan Kement, at IEEE SIU 2025 (Signal Processing and Communication Applications Conference), Istanbul, Turkiye. </p>
-<p style="color:green;">• <b>[09 May 2025]</b>  I gave a seminar titled "Elevating Connectivity: HAPS-Based Communications for a Connected Future" at Electrical and Electronics Engineering, Middle East Technical University (METU), Ankara, Turkiye. </p>
-<p style="color:green;">• <b>[23 April 2025]</b>  I gave a webinar titled "The AI Revolution in Wireless Communications: Magic, Myth, or the Next Reality?" jointly organized by IEEE Women in Engineering Ottawa Section and Carleton University NTN-Lab. </p>
-<p style="color:green;">• <b>[19 December 2024]</b>  Became a panelist in an event, titled "Meeting with Academics", organized by IEEE AYBU Student Branch. </p>
-<p style="color:green;">• <b>[15 November 2024]</b>  Gave a seminar titled "Sky-High Solutions for Connectivity: How HAPS is Redefining Non-Terrestial Networks" at TUBITAK-Bilgem in Gebze, Kocaeli, Turkiye. </p>
-<!--<p style="color:green;">• <b>[02 October 2024]</b>  I was elevated to IEEE Senior Membership. </p>
-<p style="color:green;">• <b>[16 July 2024]</b>  Metin Ozturk was interviewed by Cahid Atik from gdh digital, a large media outlet in Türkiye, about AI-related threats and opportunities, including those in 6G networks. </p>
-<p style="color:green;">• <b>[18 June 2024]</b> Our paper, titled "Cell Switching in HAPS-Aided Networking: How the Obscurity of Traffic Loads Affects the Decision," was accepted for publication at IEEE Transactions on Vehicular Technology. </p>
-<p style="color:green;">• <b>[14 June 2024]</b> Metin Ozturk was a panelist on the theme of "Non-Terrestrial Networks for Sustainable and Intelligent 6G Networks" at the panel session titled "Technologies That Will Revolutionize 6G" during the xURLLC6G Workshop at IEEE ICC 2024.</p>
-<p style="color:green;">• <b>[14 June 2024]</b> Metin Ozturk chaired a session at the IEEE International Conference on Communications (ICC) 2024, during the Workshop on Ultra High Data Rate Enabled Next Generation Hyper-Reliable and Low-Latency Communications for Futuristic 6G Networks (xURLLC6G).</p>
-<p style="color:green;">• <b>[24 May 2024]</b> Metin Ozturk delivered a talk, titled "Sustainability in Wireless Communications: Can HAPS Be Instrumental?," in a webinar organized and hosted by Dr. Abdulkadir Köse from Computer Engineering, Abdullah Gül University, Kayseri, Turkiye.</p>-->
 
-
-                </p>
-            </div>
-        </section>
-
-        <section id="about" class="main-content">
-            <h1>About</h1>
-            <p>Hello!
-<br> <br>
-I am a senior researcher on wireless communications. Currently, I’m working as an Assistant Professor of Telecommunications for Ankara Yıldırım Beyazıt University, Turkiye, where I previously worked as a Lecturer between 2020 and 2021, and as a Research Assistant between 2013 and 2016. Between 2023 and 2024, I worked as a Visiting Professor at Carleton University, Canada for a full year. I am the Director of CosetLab (Communication and Sensing Technologies Laboratory) at Ankara Yildirim Beyazit University. My current research interest is sustainability in non-terrestrial networks (NTN)-assisted wireless communication networks.
-<br><br>
-I received my Ph.D. degree from the James Watt School of Engineering, University of Glasgow, UK, and obtained my B.Sc. (in Electrical and Electronics Engineering) and M.Sc. (in Electronics and Communication Engineering) from Eskisehir Osmangazi University, Turkiye and Ankara Yildirim Beyazit University, Turkiye, in 2013 and 2016, respectively.
-<br><br>
-I have authored/co-authored 50+ journal & conference papers as well as book chapters published at top-tier venues. Additionally, we have received Workshop Best Paper Award in IEEE WCNC 2019. 
-<br><br>
-I have been serving as guest editor, research topic editor, and academic reviewer for various high-class journals and conferences. We have also organized a workshop at IEEE-WCNC 2023, titled "AI-Enabled Network Orchestration: Design Challenges and Opportunities for 6G Networks."
-<br>
-I have also delivered several seminars, talks, and keynote speeches that helped me sharing experience with people from distintive backgrounds.
-<br><br>
-I am happily married and have one lovely kid.</p>
-        </section>
-
-<section id="research" class="main-content">
-            <h1>Research</h1>
-	    <div class="side-by-side">
-	    <img src="system_model.png" alt="test" width="302" height="217">
-            <p> My resarch interests encompass various aspects of wireless networks, including:
-		<ul>
-		<li> 6G and 5G networks </li>
-		<li> Non-terrestrial networks (NTN) </li>
-		<li> Artificial intelligence (AI) for communications </li>
-		<li> Sustainability in  wireless communication networks </li>
-		<li> Cell-switching for energy efficiency in cellular communications </li>
-		<li> Radio resource management </li>
-		<li> High altitude platform station (HAPS) assisted cell switching in cellular networks </li>
-		<li> Internet of things (IoT) </li>
-		<li> Cognitive radio and opportunistic spectrum access </li>
-		</ul>
-	    </p>
-            </div>
-        </section>
-
- <section id="publications" class="main-content">
-            <h1>Publications</h1>
-            <p><b>Total:</b> 61 research items.
-<br><br>
-<b>Breakdown:</b><br><br>
-• 26 journal papers: All are international and peer reviewed.<br><br>
-• 28 conference papers: All are peer-reviewed, full-text, and IEEE-related (either organized or sponsored).<br><br>
-• 07 book chapters: All are in international and well-established publishers.
-<hr><hr>
-
-<font size="+1"><b>Journal Publications</b></font>
-<br>
-
-<p style="color:green;"><b>[J-26]</b> Talal Alqahtani, Metin Ozturk, Yu Chen, Amjed Hameed, Shuja Ansari, Muhammad Ali Imran, and Yusuf Sambo (2026). Blockchain-Enabled Dynamic Spectrum Trading for Next-Generation Wireless Networks. <i>IEEE Open Journal of the Communications Society</i>. (Accepted on 07 June 2026)</p>
-
-<b>[J-25]</b> Khennoufa, F., Abdellatif, K., Yanikomeroglu, H., Alfattani, S., Ozturk, M. and Kara, F. (2026). Two-Tier High Altitude Platform Stations (HAPS) for Exploring Wireless Energy Harvesting. <i>IEEE Access</i>. Volume 14, 59422 - 59438.
-<br><br>
-<p style="color:green;"><b>[J-24]</b> Khennoufa, F., Abdellatif, K., Ozturk, M., Yanikomeroglu, H. and Alfattani, S. (2026). RSMA-Enabled Hierarchical UAV Networks with Non-Linear Energy Harvesting: Outage Probability Analysis and UAV Placement Optimization. <i>IEEE Transactions on Vehicular Technology</i>. (Accepted on 03 June 2026)</p>
-
-<b>[J-23]</b> Salamatmoghadasi, M., Ozturk, M. and Yanikomeroglu, H.  (2026). Two-Phase Cell Switching in 6G vHetNets: Sleeping-Cell Load Estimation and Renewable-Aware Switching Toward NES. <i>IEEE Transactions on Cognitive Communications and Networking</i>. Volume 12, 7034 - 7047.
-
-<p style="color:green;"><b>[J-22]</b> Ozturk, M. (2026). Unified Optimization of Solar-Powered Cell Switching in HAPS-Assisted 6G Networks. <i>Wireless Personal Communications</i>. (Accepted on 15 June 2026)</p>
-
-<b>[J-21]</b> Ozturk, M., Salamatmoghadasi, M. and Yanikomeroglu, H.  (2026). Integrating Terrestrial and Non-Terrestrial Networks for Sustainable 6G Operations: A Latency-Aware Multi-Tier Cell-Switching Approach. <i>IEEE Network</i>. 40(2), 156 - 164.
-<br><br>
-
-<b>[J-20]</b> Khennoufa, F., Abdellatif, K., Yanikomeroglu, H., Ozturk, M., Elganimi, T., Kara, F. and Rabie, K. (2025). A Multi-layer Non-Terrestrial Networks Architecture for 6G and Beyond under Realistic Conditions and with Practical Limitations. <i>IEEE Internet of Things Magazine</i>. 8(5), 136 - 143.
-<br><br>
-
-<b>[J-19]</b> Abubakar, A., Mollel, M. S., Ozturk, M. and Ramzan, N. (2025). A Secured Energy Saving with Federated Assisted Modified Actor-Critic Framework for 6G Networks. <i>IEEE Transactions on Vehicular Technology</i>. 74(6), 9671 - 9688.
-<br><br>
-
-<b>[J-18]</b> Ciloglu, B., Koc, G. B., Shamsabadi, A. A., Ozturk, M. and Yanikomeroglu, H. (2025). Strategic Demand-Planning in Wireless Networks: Can Generative-AI Save Spectrum and Energy?. <i>IEEE Communications Magazine</i>, 63(5), 134-141.
-<br><br>
-
-<b>[J-17]</b> Ciloglu, B., Koc, G. B., Ozturk, M. and Yanikomeroglu, H. (2024). Cell Switching in HAPS-Aided Networking: How the Obscurity of Traffic Loads Affects the Decision. <i>IEEE Transactions on Vehicular Technology</i>, 73(11), 17782-17787.
-<br><br>
-
-<b>[J-16]</b> Abubakar, A., Mollel, M. S., Oniretti, O., Ozturk, M., Ahmad, I., Asad, S. M., Sambo, Y.,
-Zoha, A., Hussain, S. and Imran, M. A. (2023). Coverage and Throughput Analysis of an Energy Efficient UAV Base Station Positioning Scheme. <i>Computer Networks</i>, 232, 109854.
-<br><br>
-
-<b>[J-15]</b> Abubakar, A., Ahmad, I., Omeke, K. G., Ozturk, M., Ozturk, C., Abdel-Salam, A. M.,
-Mollel, M. S., Abbasi, Q. H., Hussain, S. and Imran, M. A. (2023). A Survey on Energy Optimization Techniques in UAV-Based Cellular Networks: From Conventional to Machine Learning Approaches. <i>Drones</i>, 7(3), 214.
-<br><br>
-
-<b>[J-14]</b> Abubakar, A., Ozturk, C., Ozturk, M., Mollel, M. S., Asad, S. M., Ul Hassan, N., Hussain,
-S. and Imran, M. A. (2022). Revenue Maximization through Cell Switching and Spectrum Leasing in 5G Heterogeneous Cellular Networks. <i>IEEE Access</i>, 10, 48301-48317.
-<br><br>
-
-<b>[J-13]</b> Ozturk, M., Abubakar, A. I., Rais, R. N. B., Jaber, M., Hussain, S. and Imran, M. A.
-(2022). Context-Aware Connectivity and Processing Optimization for IoT Networks. <i>IEEE Internet of Things Journal</i>, 9(17), 16028-16043.
-<br><br>
-
-<b>[J-12]</b> Abubakar, A. I., Mollel, M. S., Ozturk, M., Hussain, S. and Imran, M. A., (2022). A Lightweight Cell Switching and Traffic Offloading Scheme for Energy Optimization in Ultra-Dense Heterogeneous Networks. <i>Physical Communication</i>, 52, 101643.
-<br><br>
-
-<b>[J-11]</b> Atli, I., Ozturk, M., Valastro, G. C. and Asghar, M. Z. (2021). Multi-Objective UAV Positioning Mechanism for Sustainable Wireless Connectivity in Environments with Forbidden Flying Zones. <i>Algorithms</i>, 14(11), 302.
-<br><br>
-
-<b>[J-10]</b> Mollel, M. S., Abubakar, A. I., Ozturk, M., Kaijage, S., Kisangiri, M., Hussain, S., Imran, M. A. and Abbasi, Q. H. (2021). A Survey of Machine Learning Applications to Handover Management in 5G and Beyond. <i>IEEE Access</i>, 9, 45770-45802.
-<br><br>
-
-<b>[J-09]</b> Abubakar, A. I., Omeke, K. G., Ozturk, M., Hussain, S. and Imran, M. A. (2020). The Role of Artificial Intelligence Driven 5G Networks in COVID-19 Outbreak: Opportunities, Challenges, and Future Outlook. <i>Frontiers in Communications and Networks</i>, 1, 575065.
-<br><br>
-
-<b>[J-08]</b> Ozturk, M., Abubakar, A., Nadas, J. P.B., Rais, R. N. B., Hussain, S. and Imran, M. A. (2021). Energy optimization in Ultra-Dense Radio Access Networks via Traffic-Aware Cell Switching. <i>IEEE Transactions on Green Communications and Networking</i>, 5(2), 832-845.
-<br><br>
-
-<b>[J-07]</b> Omeke, K. G., Mollel, M. S., Ozturk, M., Ansari, S., Zhang, L., Abbasi, Q. H. and Imran, M. A. (2021). DEKCS: A Dynamic Clustering Protocol to Prolong Underwater Sensor Networks. <i>IEEE Sensors Journal</i>, 21(7), 9457-9464.
-<br><br>
-
-<b>[J-06]</b> Asad, S. M., Ansari, S., Ozturk, M., Rais, R. N. B., Zoha, A., Hussain, S., Abbasi, Q. H. and Imran, M. A. (2020). Mobility Management-Based Autonomous Energy-Aware Framework Using Machine Learning Approach in Dense Mobile Networks. <i>Signals</i>, 1 (2), 170-187.
-<br><br>
-
-<b>[J-05]</b> Mollel, M. S., Abubakar, A. I., Ozturk, M., Kaijage, S., Kisangiri, M., Zoha, A., Imran, M. A. and Abbasi, Q. H. (2020). Intelligent Handover Decision Scheme Using Double Deep Reinforcement Learning. <i>Physical Communication</i>, 42, 101133.
-<br><br>
-
-<b>[J-04]</b> Rizwan, A., Ali, N. A., Zoha, A., Ozturk, M., Alomaniy, A., Imran, M. A. and Abbasi, Q. H. (2020). Non-Invasive Hydration Level Estimation in Human Body Using Galvanic Skin Response. <i>IEEE Sensors Journal</i>, 20(9), 4891-4900.
-<br><br>
-
-<b>[J-03]</b> Ozturk, M., Gogate, M., Onireti, O., Adeel, A., Hussain, A. and Imran, M. A. (2019). A Novel Deep Learning Driven Low-Cost Mobility Prediction Approach for 5G Cellular Networks: The Case of the Control/Data Separation Architecture (CDSA). <i>Neurocomputing</i>, 358, 479-489.
-<br><br>
-
-<b>[J-02]</b> Ozturk, M., Akram, M., Hussain, S. and Imran, M. A. (2019). Novel QoS-Aware Proactive Spectrum Access Techniques for Cognitive Radio Using Machine Learning. <i>IEEE Access</i>, 7, 70811-70827.
-<br><br>
-
-<b>[J-01]</b> Ozturk, M., Imran, M. and Jaber, M. (2018). Energy-Aware Smart Connectivity for IoT Networks: Enabling Smart Ports. <i>Wireless Communications and Mobile Computing</i>, 2018.
-<br>
-<hr><hr>
-
-<font size="+1"><b>Conference Proceedings (Peer Reviewed & Full-Paper)</b></font>
-<br>
-
-<p style="color:blue;"> <b>[C-28]</b> Karaman, B., Khennoufa, F., Basturk, I., Ozturk, M., Kara, F., Taskin, S. and Yanikomeroglu, H. (2026). HAPS-RIS or HAPS-Relay: Which Outperforms Under Impairments with NOMA in 6G NTN? In <i>2026 IIEEE Global Communications Conference (IEEE GLOBECOM) </i>. Macau S.A.R., China, 07–11 December 2026. (Under Review)</p>
-
-<p style="color:green;"> <b>[C-27]</b> Tanrıkulu, S. N., Başer, E. S. and Ozturk, M. (2026). Risk Sensitive Semantic Flow Management in Capacity Constrained Wireless Systems [<i>to be presented and published in Turkish</i>: Kapasite Kısıtlı Kablosuz Haberleşme Sistemlerinde Risk Duyarlı Anlamsal Veri Akışı Yönetimi]. In <i>2026 IEEE Conference on Signal Processing and Communications Applications</i>. Istanbul, Turkiye, 07–10 July 2026. (Under Review)</p>
-
-<p style="color:green;"> <b>[C-26]</b> Çağan, A. T., Ersoy, Ö., Ozturk, M. and Yanikomeroglu, H. (2026). HAPS for Maritime Communications: Performance Comparison of Relaying Techniques [<i>to be presented and published in Turkish</i>: Deniz İletişimi için Yüksek İrtifa Platform İstasyonları: Röleleme Tekniklerinin Başarım Karşılaştırması]. In <i>2026 IEEE Conference on Signal Processing and Communications Applications</i>. Istanbul, Turkiye, 07–10 July 2026. (Under Review)</p>
-
-<p style="color:green;"> <b>[C-25]</b> Eren, T., Ozturk, M. and Aydin, E. (2026). Structural Analysis of Circular Convolution Breakdown in CP-OFDM for Half-Duplex Monostatic ISAC. In <i>2026 IEEE International Black Sea Conference on Communications and Networking (IEEE BlackSeaCom)</i>. Bucharest, Romania. 08-11 June 2026. (Accepted on 01 April 2026)</p>
-
-<p style="color:green;"> <b>[C-24]</b> Khennoufa, F., Abdellatif, K., Ozturk, M., Yanikomeroglu, H. and Alfattani, S. (2026). Outage Probability Analysis of NOMA-Enabled Hierarchical UAV Networks with Non-Linear Energy Harvesting. In <i>2026 IEEE International Conference on Communications (IEEE ICC) Workshops (Workshop on AI-Driven Integration of Terrestrial and Non-Terrestrial Networks)</i>. Glasgow, United Kingdom. 24-28 May 2026. (Accepted on 09 March 2026)</p>
-
-<p style="color:green;"> <b>[C-23]</b> Ulucinar, M. E., Ersoy, O., Ciloglu, B., Ozturk, M. and Gorcin, A. (2026). Propagation and Rate-Aware Cell Switching Optimization in HAPS-Assisted Wireless Networks. In <i>2026 IEEE International Conference on Communications (IEEE ICC) Workshops (Workshop on Sustainable and Sustainability-Enabling 6G).</i> Glasgow, United Kingdom. 24-28 May 2026. (Accepted on 09 March 2026)</p>
-
-
-<p style="color:green;"> <b>[C-22]</b> Ciloglu, B., Ersoy, O., Ozturk, M. and Gorcin, A. (2026). ISAC-over-NTN: HAPS-UAV Framework for Post-Disaster Responsive 6G Networks. In <i>2026 IEEE International Conference on Communications (IEEE ICC).</i> Glasgow, United Kingdom. 24-28 May 2026. (Accepted on 19 Jan 2026)</p>
-
-
-<b>[C-21]</b> Salamatmoghadasi, M., Ozturk, M. and Yanikomeroglu, H. (2025). Enhancing Sustainability in HAPS-Assisted 6G Networks: Load Estimation Aware Cell Switching. In <i>2025 IEEE International Symposium on Personal, Indoor and Mobile Radio Communications (IEEE PIMRC).</i> Istanbul, Turkiye, 01-04 September 2025.
-<br><br>
-
-<b>[C-20]</b> Karaman, B., Basturk, I., Kara, F., Ozturk, M., Taskin, S. and Yanikomeroglu, H. (2025). On the Trade-off Between Sum-Rate and Energy Efficiency Through the Convergence of HAPS and Active RIS Technologies. In <i>2025 IEEE International Symposium on Personal, Indoor and Mobile Radio Communications (IEEE PIMRC).</i> Istanbul, Turkiye, 01-04 September 2025.
-<br><br>
-
-<b>[C-19]</b> Koc, G. B. and Ozturk, M. (2025). Score-Based Allocation Method for Post-Disaster Communications via Multi-Layer NTN Architecture [<i>to be presented and published in Turkish</i>: Çok Katmanlı KOA Mimarisi ile Afet Sonrası Haberleşme İçin Skor Tabanlı Tahsis Yöntemi]. In <i>2025 IEEE Conference on Signal Processing and Communications Applications</i>. Istanbul, Turkiye, 25–28 June 2025.
-<br><br>
-
-<b>[C-18]</b> Khennoufa, F., Abdellatif, K., Yanikomeroglu, H., Ozturk, M., Elganimi, T., Kara, F. and Rabie, K. (2025). Multi-Layer Network Formation Through HAPS Base Station and Transmissive RIS-Equipped UAV. In <i>2025 IEEE Wireless Communications and Networking Conference (IEEE WCNC).</i> Milan, Italy, 24-27 March 2024.
-<br><br>
-
-<b>[C-17]</b> Koc, G. B., Ciloglu, B., Ozturk, M. and Yanikomeroglu, H. (2024). A Lightweight Machine Learning Approach for Delay-Aware Cell-Switching in 6G HAPS Networks. In <i>2024 IEEE International Conference on Communications (IEEE ICC) Workshops (xURLLC6G Workshop)</i>. Denver, CO, USA, 09–13 June 2024.
-<br><br>
-
-<b>[C-16]</b> Ozturk, M., Ciloglu, B., Koc, G. B. and Yanikomeroglu, H. (2024). Multi-Tier Non-Terrestrial Networking for Disaster Communications: A Layered Clustering Approach. In <i>2024 IEEE Conference on Signal Processing and Communications Applications (IEEE SIU)</i>. Mersin, Turkiye, 15–18 May 2024.
-<br><br>
-
-<b>[C-15]</b> Cagan, A. T., Kaymak, O., Ersoy, O. and Ozturk, M. (2023). Enabling Smart Port Connectivity via UAV-IRS Assisted Relaying. In <i>2023 Innovations in Intelligent Systems and Applications Conference (ASYU-2023) (Sponsored by IEEE)</i>. Sivas, Turkiye, 11–12 October 2023.
-<br><br>
-
-<b>[C-14]</b> Koc, G. B., Ciloglu, B., Ozturk, M. and Yanikomeroglu, H. (2023). HAPS-enabled Sustainability Provision in Cellular Networks through Cell-Switching. In <i>2023 IEEE International Black Sea Conference on Communications and Networking (IEEE BlackSeaCom)</i>. Istanbul, Turkiye, 04–07 July 2023.
-<br><br>
-
-<b>[C-13]</b> Ashgari, M. Z., Ozturk, M. and Hamalainen, J. (2021). Reinforcement Learning Based Mobility Load Balancing with the Cell Individual Offset. In <i>2021 IEEE Conference on Vehicular Technology (IEEE VTC-Spring) Workshops (ICNET Workshop)</i>. Helsinki, Finland, 25-28 April 2021.
-<br><br>
-
-<b>[C-12]</b> Abubakar, A., Ozturk, M., Rais, R. N. B., Hussain, S. and Imran, M. (2020). Load-Aware Cell Switching in Ultra-Dense Networks: An Artificial Neural Network Approach. In <i>2020 International Conference on UK-China Emerging Technologies (UCET)</i>. Glasgow, United Kingdom, 20-21 August 2020.
-<br><br>
-
-<b>[C-11]</b> Asad, S. M., Ozturk, M., Rais, R. N. B., Zoha, A., Hussain, S., Abbasi, Q. H. and Imran, M. A. (2019). Reinforcement Learning Driven Energy Efficient Mobile Communication and Applications. In <i>2019 IEEE International Symposium on Signal Processing and Information Technology (IEEE ISSPIT)</i>. Ajman, United Arab Emirates, 10-12 December 2019.
-<br><br>
-
-<b>[C-10]</b> Ozturk, M., Nadas, J. P.B., Klaine, P. H.V., Hussain, S. and Imran, M. A. (2019). Clustering Based UAV Base Station Positioning for Enhanced Network Capacity. In <i>2019 International Conference on Advances in the Emerging Computing Technologies (AECT 2019)</i>. Medina, Saudi Arabia, 08-10 December 2019.
-<br><br>
-
-<b>[C-09]</b> Abubakar, A., Ozturk, M., Hussain, S. and Imran, M. (2019). Q-learning Assisted Energy-Aware Traffic Offloading and Cell Switching in Heterogeneous Networks. In <i>IEEE 2019 International Workshop on Computer Aided Modeling and Design of Communication Links and Networks (IEEE CAMAD)</i>. Limassol, Cyprus, 11-13 September 2019.
-<br><br>
-
-<b>[C-08]</b> Sambo, Y. A., Valastro, G. C., Patane, G. M. M., Ozturk, M., Hussain, S., Imran, M. A. and Panno, D. (2019). Motion Sensor-based Small Cell Sleep Scheduling for 5G Networks. In <i>IEEE 2019 International Workshop on Computer Aided Modeling and Design of Communication Links and Networks (IEEE CAMAD)</i>. Limassol, Cyprus, 11-13 September 2019.
-<br><br>
-
-<b>[C-07]</b> Patane, G. M. M., Valastro, G. C., Sambo, Y. A., Ozturk, M., Hussain, S., Imran, M. A. and Panno, D. (2019). Flexible SDN/NFV-based Testbed for 5G Mobile Networks. In <i>IEEE/ACM  International Symposium on
-Distributed Simulation and Real Time Applications (DS-RT) 2019</i>. Cosenza, Italy, 7-9 October 2019.
-<br><br>
-
-<b>[C-06]</b> Mollel, M., Ozturk, M., Kaijage, S., Kisangiri, M., Onireti, O., Imran, M. A. and Abbasi, Q. H. (2019). Handover Management in Dense Networks with Coverage Prediction from Sparse Networks. In <i>2019 IEEE Wireless Communications and Networking Conference (IEEE WCNC) Workshops (uHSLLC Workshop)</i>. Marrakech, Morocco, 15-18 April 2019.
-<br><br>
-
-<b>[C-05]</b> Ozturk, M., Abubakar, I., Hassan, N. U., Hussain, S., Imran, M. A. and Yuen, C. (2019). Spectrum Cost Optimization for Cognitive Radio Transmission over TV White Spaces Using Artificial Neural Networks. In <i>4th International Conference on UK - China Emerging Technologies (UCET) 2019</i>. Glasgow, UK, 21-22 August 2019.
-<br><br>
-
-<b>[C-04]</b> Turkmen, A., Mollel, M. S., Ozturk, M., Yao, S., Zhang, L., Ghannam, R. and Imran, M. A. (2019). Coverage Analysis for Indoor-Outdoor Coexistence for Millimetre-Wave Communication. In <i>4th International Conference on UK - China Emerging Technologies (UCET) 2019</i>. Glasgow, UK, 21-22 August 2019.
-<br><br>
-
-<b>[C-03]</b> Ozturk, M., Valente Klaine, P. and Imran, M. A. (2018). Introducing a Novel Minimum Accuracy Concept for Predictive Mobility Management Schemes. In <i>2018 IEEE International Conference on Communications (IEEE ICC) Workshops (5G-UDN Workshop)</i>. Kansas City, MO, USA, 20-24 May 2018.
-<br><br>
-
-<b>[C-02]</b> Ozturk, M., Valente Klaine, P. and Imran, M. A. (2018). 3D Transition Matrix Solution for a Path Dependency Problem of Markov Chains-Based Prediction in Cellular Networks. In <i>2017 IEEE Conference on Vehicular Technology (IEEE VTC-Fall) Workshops (BackNets Workshop)</i>. Toronto, Canada, 24-27 September 2017.
-<br><br>
-
-<b>[C-01]</b> Ozturk, M., Valente Klaine, P. and Imran, M. A. (2018). Improvement on the Performance of Predictive Handover Management by Setting a Threshold. In <i>2017 IEEE Conference on Vehicular Technology (IEEE VTC-Fall) Workshops (BackNets Workshop)</i>. Toronto, Canada, 24-27 September 2017.
-<br>
-<hr><hr>
-
-<font size="+1"><b>Book Chapters</b></font>
-<br><br>
-
-<b>[B-07]</b> Ozturk, M. (2023). Long Distance Power Transmission. In  M. A. Imran, A. Taha, S. Ansari, M. Usman and Q. H. Abbasi (Eds.), <i>The Role of 6G and Beyond on the Road to Net-Zero Carbon</i> (pp. 89–111). ISBN: 9781839537363. The Institution of Engineering and Technology (IET).
-<br><br>
-
-<b>[B-06]</b> Ozturk, M., Abubakar, A., Valente Klaine, P., Hussain, S., Abbasi, Q. H. and Imran, M. A. (2020). Cognitive Radio Spectrum Sensing: From Conventional Approaches to Machine Learning-based Predictive Techniques. In H. Arslan and E. Basar (Eds.), <i>Flexible and Cognitive Radio Access Technologies for 5G and Beyond</i> (pp. 481-512). ISBN: 978-1839530791. The Institution of Engineering and Technology (IET). 
-<br><br>
-
-<b>[B-05]</b> Rizwan, A., Ozturk, M., Ali, N. A., Zoha, A., Abbasi, Q. H. and Imran, M. A. (2020). Machine Learning for Decision Making in Healthcare. In R. Ghannam, M. A. Imran and Q. H. Abbasi (Eds.), <i>Engineering and Technology for Healthcare</i> (pp. 95-116). ISBN: 9781119644248. Wiley-IEEE Press.
-<br><br>
-
-<b>[B-04]</b> Ozturk, M., Valente Klaine, P., Hussain, S. and Imran, M. A. (2020). Predictive Mobility Management in Cellular Networks. In M. Z. Shakir and N. Ramzan (Eds.), <i>AI for Emerging Verticals: Human-Robot Computing, Sensing and Networking</i> (pp. 135-155). ISBN: 9781785619823. The Institution of Engineering and Technology (IET).
-<br><br>
-
-<b>[B-03]</b> Imran, M. A., Ozturk, M., Abubakar, A. I., Valente Klaine, P., Hussain, S. and Abbasi, Q. H. (2019). Mobility Prediction Based Resource Management. In R. Tafazolli, C.-L. Wang and P. Chatzimisios (Eds.), <i>Wiley 5G Ref: The Essential 5G Reference Online</i> (pp. 1-18). ISBN 9781119471509. Wiley.
-<br><br>
-
-<b>[B-02]</b> Imran, M. A., Turkmen, A., Ozturk, M., Nadas, J. P. B. and Abbasi, Q. H. (2019). Seamless Indoor/Outdoor Coverage in 5G. In R. Tafazolli, C.-L. Wang and P. Chatzimisios (Eds.), <i>Wiley 5G Ref: The Essential 5G Reference Online</i> (pp. 1-18). ISBN 9781119471509. Wiley.
-<br><br>
-
-<b>[B-01]</b> Ozturk, M., Jaber, M. and Imran, M. A. (2019). Life-Span Extension for Sensor Networks in the Industry. In M. A. Imran, S. Hussain and Q. H. Abbasi (Eds.), <i>Wireless Automation as an Enabler for the Next Industrial Revolution</i> (pp. 19-45). ISBN 9781119552611. Wiley-IEEE Press.
-</p>
-</section>
-
-<section id="teaching" class="main-content">
-            <h1>Teaching</h1>
-<p>I have been involved in teaching various undergraduate and graduate courses, including:
-<br>
-<font size="+1"><b>Graduate-Level Courses</b></font>
- <ul>
-   <li> Non-Terrestrial Communication Networks </li>
-<br>
-   <li> Machine Learning for Wireless Communication Networks </li>
-<br>
-   <li> Artificial Intelligence and Security</li>
-<br>
-   <li> Wireless Communications</li>
-<br>
-   <li> Tactical Wireless Communications and 5G Networks</li>
-</ul>
-<hr><hr>
-
-<font size="+1"><b>Undergraduate-Level Courses</b></font>
- <ul>
-   <li>Mobile Communications </li>
-<br>
-   <li>Coding Theory</li>
-<br>
-   <li>Introduction to Electrical and Electronics Engineering</li>
-<br>
-   <li>Introduction to Electronics</li>
-<br>
-   <li>Analog Electronics</li>
-<br>
-   <li>Materials Science for Electrical and Electronics Engineers</li>
-<br>
-   <li>Fundamentals of Electrical and Electronics Engineering</li>
-<br>
-   <li>Electrical Circuits and Electronic Devices</li>
-</ul>
-</section>
-
-<section id="talks" class="main-content">
-            <h1>Talks & Seminars</h1>
- <ul>
-<li><b>Tutorial.</b> Title: "Towards Sustainable 6G: The Role of Non-Terrestrial Networks in Intelligent Green Communication Systems". 2025 International Conference on Engineering and Computing Technologies (EngiTek 2025). Irbid, Jordan, 28 December 2025.</li>
-<br>
-<li><b>Invited Talk.</b> Title: "Internet Above the Clouds: The Promise of High-Altitude Platform Stations (HAPS)". IXCHANGING IDEAS #64 Global 5G Evolution. Online, 05 August 2025. <a href="https://youtu.be/c_G4mRSp-hM?si=tcVoMdAu2HuRwxm1">Click here to watch on YouTube (my part starts at 01:09:00)</a></li>
-<br>
-   <li><b>Tutorial.</b> Title: "6G and Beyond Wireless Communication Systems with High Altitude Platform Stations (HAPS)". IEEE SIU 2025 (Signal Processing and Communication Applications Conference). Istanbul, Turkiye, 25 June 2025.</li>
-<br>
-   <li><b>Seminar.</b> Title: "Elevating Connectivity: HAPS-Based Communications for a Connected Future". Electrical and Electonics Engineering, Middle East Technical University (METU). Ankara, Turkiye, 09 May 2025.</li>
-<br>
-   <li><b>Webinar.</b> Title: "The AI Revolution in Wireless Communications: Magic, Myth, or the Next Reality?". Jointly organized by IEEE Women in Engineering Ottawa Section and Carleton University NTN-Lab. Ottawa, ON, Canada, 23 April 2025.</li>
-<br>
-   <li><b>Panelist.</b> Title: "Meeting with Academics". Organized by IEEE AYBU Student Branch, Ankara Yıldırım Beyazıt University. Ankara, Turkiye, 19 December 2024.</li>
-<br>
-   <li><b>Seminar.</b> Title: "Sky-High Solutions for Connectivity: How HAPS is Redefining Non-Terrestial Networks". TUBITAK-Bilgem. Gebze, Kocaeli, Turkiye, 15 November 2024. <a href="https://www.youtube.com/watch?v=YlzWjxC_cmc">Click here to watch on YouTube</a></li>
-<br>
-   <li> <b> Panelist.</b> Title: "Non-Terrestrial Networks for Sustainable and Intelligent 6G Networks". Title of the Panel Session: "Technologies That Will Revolutionize 6G". Workshop on Ultra High Data Rate Enabled Next Generation Hyper-Reliable and Low-Latency Communications for Futuristic 6G Networks (xURLLC6G), IEEE International Conference on Communications (ICC) 2024. Denver, CO, USA, 14 June 2024. </li>
-<br>
-   <li> <b> Webinar.</b> Title: "Sustainability in Wireless Communications: Can HAPS Be Instrumental?". Computer Engineering, Abdullah Gul University. Kayseri, Turkiye, 24 May 2024. </li>
-<br>
-   <li> <b> Guest Lecture in a PhD Course.</b> Title: "Machine Learning Based Predictive and Requirement-Specific Spectrum Access". Course Title: Machine Learning for Wireless Communications (ML4WC). Graduate School, University of Electronic Science and Technology of China (UESTC). China, 11 May 2023 (2022-2023/Spring). </li>
-<br>
-   <li><b>Seminar.</b> Title: "Artificial Intelligence in the Perspective of Law and Engineering: Can AI think?". School of Law, Ankara Yıldırım Beyazıt University. Ankara, Turkiye, 07 December 2022.</li>
-<br>
-   <li> <b>Seminar.</b> Title: "Artificial Intelligence Strategies for Security, Health and Economy". Institute for International Relations and Strategic Studies (ULİSA), Ankara Yıldırım Beyazıt University. Ankara, Turkiye, 25 November 2022.</li>
-<br>
-   <li><b>Invited Talk.</b> Title: "The Role of AI in Shaping the 5G+ Communication Networks". Training on 5G+ Communication Systems and Their Applications, Abdullah Gül University. Kayseri, Turkiye, May-2022.</li>
-<br>
-   <li> <b>Keynote Speech.</b> Title: "Intelligent Wireless Connectivity in 5G-enabled Smart Cities". 5G-enabled Smart Cities Workshop in IEEE International Smart Cities Conference. Manchester, United Kingdom, 07 September 2021.</li>
-<br>
-   <li><b>Guest Lecture in a PhD Course.</b> Title: "QoS-Aware Proactive Cognitive Radio Spectrum Access with Machine Learning". Course Title: Machine Learning for Wireless Communications (ML4WC). Graduate School, University of Electronic Science and Technology of China (UESTC). China, 02 June 2021 (2020-2021/Spring).</li>
-</ul>
-</section>
-
-
-<section id="media" class="main-content">
-    <h1>Media Coverage</h1>
-<ul>
-   <li> A media interview on Artificial Intelligence (AI) with gdh.digital, a large media outlet in Türkiye <a href="https://gdh.digital/haber-120829"> [Link]</a> <a href="https://x.com/gundemedairhs/status/1813269685913465148"> [Twitter/X Link]</a> [16 July 2024]
-</ul>
-
-
-</section>
-
-<section id="blog" class="main-content">
-    <h1>Blog Articles</h1>
-I write blog articles on Medium: <a href="https://medium.com/@metin.ozturk"> [My Medium Profile]</a>
-
-</section>
-
-
-        <section id="contact" class="main-content">
-    <h1>Contact</h1>
-    <p>Feel free to reach out via email: <b>metin.ozturk@aybu.edu.tr</b></p>
-	<p>Or, I am also on social media!</p>      
-            <a href="https://www.linkedin.com/in/metin-ozturk" target="_blank">
-                <i class="fab fa-linkedin"></i> LinkedIn
-            </a>
-            &nbsp;&nbsp;
-            <a href="https://twitter.com/MettinOzturk" target="_blank">
-                <i class="fab fa-twitter"></i> X/Twitter
-            </a>
-            &nbsp;&nbsp;
-            <a href="https://scholar.google.ca/citations?user=4UxKZw4AAAAJ&hl=en" target="_blank">
-                <i class="fas fa-graduation-cap"></i> Google Scholar
-            </a>
-            &nbsp;&nbsp;
-            <a href="https://www.researchgate.net/profile/Metin-Ozturk-3" target="_blank">
-                <i class="fab fa-researchgate"></i> ResearchGate
-            </a>
-</section>
+<header class="nav">
+  <div class="nav-inner">
+    <div class="nav-name"><a href="#top" id="navName"></a></div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#top">Main</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#teaching">Teaching</a></li>
+        <li><a href="#talks">Talks</a></li>
+        <li><a href="#media">Media</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<a id="top"></a>
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow">Researcher &middot; Assistant Professor</p>
+        <h1 id="heroName"></h1>
+        <p class="tagline" id="heroTagline"></p>
+        <p class="lede" id="heroWelcome"></p>
+        <div class="quicklinks" id="heroLinks"></div>
+      </div>
+      <img class="portrait" id="heroPhoto" alt="Portrait of Metin Ozturk">
     </div>
+    <div class="stats" id="heroStats"></div>
+  </div>
+</section>
 
-    <footer class="footer">
-        <p>&copy; 2024 Metin Ozturk [Last updated on 15 June 2026]</p>
-    </footer>
+<main class="wrap" id="main"></main>
+
+<footer>
+  <div class="wrap">
+    <p id="copyright"></p>
+    <p class="updated" id="updated"></p>
+  </div>
+</footer>
+
+<button id="toTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<script src="content.js"></script>
+<script>
+(function(){
+  const S = window.SITE || SITE;
+  const el = (t,c,h)=>{const e=document.createElement(t); if(c)e.className=c; if(h!=null)e.innerHTML=h; return e;};
+  const $ = id => document.getElementById(id);
+
+  /* ----- header / hero ----- */
+  $('navName').textContent = S.name.split(',')[0];
+  $('heroName').textContent = S.name;
+  $('heroTagline').textContent = S.tagline;
+  $('heroWelcome').textContent = S.welcome;
+  $('heroPhoto').src = S.photo;
+
+  const linkDefs = [
+    ['email',  'fa-solid fa-envelope',      'Email',          'mailto:'+S.email],
+    ['scholar','fa-solid fa-graduation-cap','Google Scholar', S.links.scholar],
+    ['linkedin','fa-brands fa-linkedin',    'LinkedIn',       S.links.linkedin],
+    ['twitter','fa-brands fa-x-twitter',    'X / Twitter',    S.links.twitter],
+    ['rg',     'fa-brands fa-researchgate', 'ResearchGate',   S.links.researchgate],
+  ];
+  const hl = $('heroLinks');
+  linkDefs.forEach(([k,icon,label,href])=>{
+    if(!href) return;
+    const a = el('a','chip',`<i class="${icon}"></i>${label}`);
+    a.href = href;
+    if(k!=='email'){ a.target='_blank'; a.rel='noopener'; }
+    hl.appendChild(a);
+  });
+
+  /* ----- stats ----- */
+  const nJ=S.journals.length, nC=S.conferences.length, nB=S.bookChapters.length;
+  const stats = [
+    [nJ+nC+nB, 'Research items'],
+    [nJ, 'Journal papers'],
+    [nC, 'Conference papers'],
+    [nB, 'Book chapters'],
+  ];
+  const hs = $('heroStats');
+  stats.forEach(([n,l])=>{
+    const d = el('div','stat'); d.appendChild(el('div','num',n)); d.appendChild(el('div','lab',l)); hs.appendChild(d);
+  });
+
+  /* ----- helpers ----- */
+  const main = $('main');
+  function section(id, idx, title){
+    const s = el('section'); s.id = id;
+    const p = el('div','panel');
+    const head = el('div','sec-head');
+    head.appendChild(el('span','idx',idx));
+    head.appendChild(el('h2',null,title));
+    p.appendChild(head);
+    s.appendChild(p);
+    main.appendChild(s);
+    return p; // append content into the panel
+  }
+  function pubList(items){
+    const ol = el('ol','pubs');
+    items.forEach(it=>{
+      const li = el('li', it.status ? ('st-'+it.status) : null);
+      li.appendChild(el('span','tag', it.id));
+      li.appendChild(el('div','cite', it.cite));
+      ol.appendChild(li);
+    });
+    return ol;
+  }
+
+  /* ----- ABOUT ----- */
+  (function(){
+    const p = section('about','01','About');
+    S.about.forEach(par => p.appendChild(el('p',null,par)));
+  })();
+
+  /* ----- RESEARCH ----- */
+  (function(){
+    const p = section('research','02','Research');
+    const grid = el('div','research-grid');
+    if(S.researchImage){
+      const img = el('img'); img.src = S.researchImage; img.alt='Research system model'; grid.appendChild(img);
+    }
+    const col = el('div');
+    col.appendChild(el('p',null,S.researchIntro));
+    const ul = el('ul','bullets');
+    S.researchInterests.forEach(r => ul.appendChild(el('li',null,r)));
+    col.appendChild(ul);
+    grid.appendChild(col);
+    p.appendChild(grid);
+  })();
+
+  /* ----- PUBLICATIONS ----- */
+  (function(){
+    const p = section('publications','03','Publications');
+    const total = nJ+nC+nB;
+    p.appendChild(el('p',null,`<b>Total:</b> ${total} research items.`));
+
+    const sum = el('div','pub-summary');
+    sum.appendChild(el('span','s',`<b>${nJ}</b> journal papers — ${S.pubNotes.journals}`));
+    sum.appendChild(el('span','s',`<b>${nC}</b> conference papers — ${S.pubNotes.conferences}`));
+    sum.appendChild(el('span','s',`<b>${nB}</b> book chapters — ${S.pubNotes.bookChapters}`));
+    p.appendChild(sum);
+
+    const jump = el('div','pub-jump',
+      `Jump to: <a href="#pub-journals">Journals</a> &middot; <a href="#pub-conf">Conference Proceedings</a> &middot; <a href="#pub-book">Book Chapters</a>`);
+    p.appendChild(jump);
+
+    const sh1 = el('div','subhead'); sh1.id='pub-journals';
+    sh1.appendChild(el('span',null,'Journal Publications'));
+    sh1.appendChild(el('span','count',`${nJ} items`));
+    p.appendChild(sh1);
+    p.appendChild(pubList(S.journals));
+
+    const sh2 = el('div','subhead'); sh2.id='pub-conf';
+    sh2.appendChild(el('span',null,'Conference Proceedings'));
+    sh2.appendChild(el('span','count',`${nC} items · peer reviewed, full-paper`));
+    p.appendChild(sh2);
+    p.appendChild(pubList(S.conferences));
+
+    const sh3 = el('div','subhead'); sh3.id='pub-book';
+    sh3.appendChild(el('span',null,'Book Chapters'));
+    sh3.appendChild(el('span','count',`${nB} items`));
+    p.appendChild(sh3);
+    p.appendChild(pubList(S.bookChapters));
+  })();
+
+  /* ----- TEACHING ----- */
+  (function(){
+    const p = section('teaching','04','Teaching');
+    p.appendChild(el('p',null,S.teachingIntro));
+    const grid = el('div','teach-grid');
+    [['Graduate-Level Courses',S.gradCourses],['Undergraduate-Level Courses',S.undergradCourses]].forEach(([title,list])=>{
+      const col = el('div');
+      col.appendChild(el('div','subhead',title));
+      const ul = el('ul','bullets');
+      list.forEach(c => ul.appendChild(el('li',null,c)));
+      col.appendChild(ul);
+      grid.appendChild(col);
+    });
+    p.appendChild(grid);
+  })();
+
+  /* ----- TALKS ----- */
+  (function(){
+    const p = section('talks','05','Talks & Seminars');
+    const ol = el('ol','talks');
+    S.talks.forEach(t=>{
+      const li = el('li');
+      li.innerHTML = `<span class="talk-kind">${t.kind}</span>${t.body}`;
+      ol.appendChild(li);
+    });
+    p.appendChild(ol);
+  })();
+
+  /* ----- NEWS (announcements) — placed as its own top panel above About? kept under Main flow ----- */
+  // (Announcements are rendered into a dedicated panel right after the hero.)
+
+  /* ----- MEDIA ----- */
+  (function(){
+    const p = section('media','06','Media Coverage');
+    const ul = el('ul','bullets');
+    S.media.forEach(m => ul.appendChild(el('li',null,m)));
+    p.appendChild(ul);
+  })();
+
+  /* ----- BLOG ----- */
+  (function(){
+    const p = section('blog','07','Blog Articles');
+    p.appendChild(el('p',null,S.blog));
+  })();
+
+  /* ----- CONTACT ----- */
+  (function(){
+    const p = section('contact','08','Contact');
+    p.appendChild(el('p',null,`Feel free to reach out via email: <b><a href="mailto:${S.email}">${S.email}</a></b>`));
+    p.appendChild(el('p',null,`Or, I am also on social media!`));
+    const row = el('div','contact-links');
+    [
+      ['fa-brands fa-linkedin','LinkedIn',S.links.linkedin],
+      ['fa-brands fa-x-twitter','X / Twitter',S.links.twitter],
+      ['fa-solid fa-graduation-cap','Google Scholar',S.links.scholar],
+      ['fa-brands fa-researchgate','ResearchGate',S.links.researchgate],
+    ].forEach(([icon,label,href])=>{
+      if(!href) return;
+      const a = el('a','chip',`<i class="${icon}"></i>${label}`);
+      a.href=href; a.target='_blank'; a.rel='noopener';
+      row.appendChild(a);
+    });
+    p.appendChild(row);
+  })();
+
+  /* ----- ANNOUNCEMENTS: insert a News panel right after the hero (before About) ----- */
+  (function(){
+    if(!S.announcements || !S.announcements.length) return;
+    const s = el('section'); s.id='news';
+    const p = el('div','panel');
+    const head = el('div','sec-head');
+    head.appendChild(el('span','idx','00'));
+    head.appendChild(el('h2',null,'News'));
+    p.appendChild(head);
+    const ul = el('ul','news');
+    S.announcements.forEach(a=>{
+      const li = el('li');
+      li.appendChild(el('span','news-date',a.date));
+      li.appendChild(el('div',null,a.body));
+      ul.appendChild(li);
+    });
+    p.appendChild(ul); s.appendChild(p);
+    main.insertBefore(s, main.firstChild);
+  })();
+
+  /* ----- footer ----- */
+  $('copyright').innerHTML = `&copy; ${S.copyrightYear} ${S.name.split(',')[0]}`;
+  $('updated').textContent = `Last updated on ${S.lastUpdated}`;
+
+  /* ----- mobile nav ----- */
+  const toggle = $('navToggle'), links = $('navLinks');
+  toggle.addEventListener('click', ()=>{
+    const open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+  });
+  links.addEventListener('click', e=>{ if(e.target.tagName==='A') links.classList.remove('open'); });
+
+  /* ----- scrollspy ----- */
+  const navMap = {};
+  links.querySelectorAll('a').forEach(a=>{ navMap[a.getAttribute('href').slice(1)] = a; });
+  if('IntersectionObserver' in window){
+  const spy = new IntersectionObserver(entries=>{
+    entries.forEach(en=>{
+      if(en.isIntersecting){
+        Object.values(navMap).forEach(a=>a.classList.remove('active'));
+        const a = navMap[en.target.id];
+        if(a) a.classList.add('active');
+      }
+    });
+  }, {rootMargin:`-${parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h'))+20}px 0px -70% 0px`});
+  document.querySelectorAll('main section, #top').forEach(s=>{ if(s.id) spy.observe(s); });
+  }
+
+  /* ----- back to top ----- */
+  const toTop = $('toTop');
+  window.addEventListener('scroll', ()=>{ toTop.classList.toggle('show', window.scrollY>600); }, {passive:true});
+  toTop.addEventListener('click', ()=>window.scrollTo({top:0, behavior:'smooth'}));
+})();
+</script>
 </body>
 </html>
