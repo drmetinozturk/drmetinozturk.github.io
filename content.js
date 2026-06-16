@@ -118,7 +118,7 @@ const SITE = {
 
   journals: [
     { id: `J-26`, status: `accepted`, cite: `Talal Alqahtani, Metin Ozturk, Yu Chen, Amjed Hameed, Shuja Ansari, Muhammad Ali Imran, and Yusuf Sambo (2026). Blockchain-Enabled Dynamic Spectrum Trading for Next-Generation Wireless Networks. <i>IEEE Open Journal of the Communications Society</i>. (Accepted on 07 June 2026)` },
-    { id: `J-25`, cite: `Khennoufa, F., Abdellatif, K., Yanikomeroglu, H., Alfattani, S., Ozturk, M. and Kara, F. (2026). Two-Tier High Altitude Platform Stations (HAPS) for Exploring Wireless Energy Harvesting. <i>IEEE Access</i>. Volume 14, 59422 - 59438.` },
+    { id: `J-25`, cite: `Faicel Khennoufa, Khelil Abdellatif, Halim Yanikomeroglu, Safwan Alfattani, Metin Ozturk, Ferdi Kara (2026). Two-Tier High Altitude Platform Stations (HAPS) for Exploring Wireless Energy Harvesting. <i>IEEE Access</i>. Volume 14, 59422 - 59438. (<a href="https://ieeexplore.ieee.org/document/11482139/">Link to the paper</a>)` },
     { id: `J-24`, status: `accepted`, cite: `Khennoufa, F., Abdellatif, K., Ozturk, M., Yanikomeroglu, H. and Alfattani, S. (2026). RSMA-Enabled Hierarchical UAV Networks with Non-Linear Energy Harvesting: Outage Probability Analysis and UAV Placement Optimization. <i>IEEE Transactions on Vehicular Technology</i>. (Accepted on 03 June 2026)` },
     { id: `J-23`, cite: `Salamatmoghadasi, M., Ozturk, M. and Yanikomeroglu, H.  (2026). Two-Phase Cell Switching in 6G vHetNets: Sleeping-Cell Load Estimation and Renewable-Aware Switching Toward NES. <i>IEEE Transactions on Cognitive Communications and Networking</i>. Volume 12, 7034 - 7047.` },
     { id: `J-22`, status: `accepted`, cite: `Ozturk, M. (2026). Unified Optimization of Solar-Powered Cell Switching in HAPS-Assisted 6G Networks. <i>Wireless Personal Communications</i>. (Accepted on 15 June 2026)` },
@@ -197,6 +197,7 @@ const SITE = {
   teachingIntro: `I have been involved in teaching various undergraduate and graduate courses, including:`,
   gradCourses: [
     `Non-Terrestrial Communication Networks`,
+    `Research Methods and Ethics`,
     `Machine Learning for Wireless Communication Networks`,
     `Artificial Intelligence and Security`,
     `Wireless Communications`,
