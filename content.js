@@ -141,8 +141,8 @@ const SITE = {
     { id: `J-05`, cite: `Mollel, M. S., Abubakar, A. I., Ozturk, M., Kaijage, S., Kisangiri, M., Zoha, A., Imran, M. A. and Abbasi, Q. H. (2020). Intelligent Handover Decision Scheme Using Double Deep Reinforcement Learning. <i>Physical Communication</i>, 42, 101133.` },
     { id: `J-04`, cite: `Rizwan, A., Ali, N. A., Zoha, A., Ozturk, M., Alomaniy, A., Imran, M. A. and Abbasi, Q. H. (2020). Non-Invasive Hydration Level Estimation in Human Body Using Galvanic Skin Response. <i>IEEE Sensors Journal</i>, 20(9), 4891-4900.` },
     { id: `J-03`, cite: `Ozturk, M., Gogate, M., Onireti, O., Adeel, A., Hussain, A. and Imran, M. A. (2019). A Novel Deep Learning Driven Low-Cost Mobility Prediction Approach for 5G Cellular Networks: The Case of the Control/Data Separation Architecture (CDSA). <i>Neurocomputing</i>, 358, 479-489.` },
-    { id: `J-02`, cite: `Metin Ozturk, Muhammad Akram, Sajjad Hussain, Muhammad A. Imran (2019). Novel QoS-Aware Proactive Spectrum Access Techniques for Cognitive Radio Using Machine Learning. <i>IEEE Access</i>, 7, 70811-70827. (<a href="https://www.mdpi.com/1999-4893/14/11/302">Link to the paper</a>)` },
-    { id: `J-01`, cite: `Metin Ozturk, Mona Jaber, Muhammad A. Imran (2018). Energy-Aware Smart Connectivity for IoT Networks: Enabling Smart Ports. <i>Wireless Communications and Mobile Computing</i>, 2018. (<a href="https://ieeexplore.ieee.org/abstract/document/8720154">Link to the paper</a>)` },
+    { id: `J-02`, cite: `Metin Ozturk, Muhammad Akram, Sajjad Hussain, Muhammad A. Imran (2019). Novel QoS-Aware Proactive Spectrum Access Techniques for Cognitive Radio Using Machine Learning. <i>IEEE Access</i>, 7, 70811-70827. (<a href="https://ieeexplore.ieee.org/document/8720154/">Link to the paper</a>)` },
+    { id: `J-01`, cite: `Metin Ozturk, Mona Jaber, Muhammad A. Imran (2018). Energy-Aware Smart Connectivity for IoT Networks: Enabling Smart Ports. <i>Wireless Communications and Mobile Computing</i>, 2018. (<a href="https://onlinelibrary.wiley.com/doi/10.1155/2018/5379326">Link to the paper</a>)` },
   ],
 
   conferences: [
