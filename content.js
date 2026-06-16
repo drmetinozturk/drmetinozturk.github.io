@@ -27,8 +27,22 @@ const SITE = {
   name: `Metin Ozturk, PhD, SMIEEE`,
   tagline: `Wireless Communications | Non-Terrestrial Networks | 6G | AI`,
   photo: `sit.jpg`,                 // keep this image file next to index.html
-  lastUpdated: `16 June 2026`,      // change this whenever you update the site
+  lastUpdated: `15 June 2026`,      // change this whenever you update the site
   copyrightYear: `2024`,
+
+  /* ---- THE NUMBER STRIP AT THE TOP OF THE PAGE -------------------------- */
+  /* Edit these freely — change the number or the label.                     */
+  /* You can type a fixed number (e.g. 6), OR use one of these keywords and  */
+  /* the strip will count it for you automatically:                          */
+  /*   `publications` -> journals + conferences + book chapters              */
+  /*   `talks`        -> entries in your Talks list                          */
+  /*   `courses`      -> graduate + undergraduate courses                    */
+  heroStats: [
+    { num: `publications`, label: `Research publications` },
+    { num: 6,              label: `Projects` },
+    { num: `talks`,        label: `Talks` },
+    { num: `courses`,      label: `Courses taught` },
+  ],
 
   // The short welcome paragraph at the very top
   welcome: `Hello! I am a researcher and currently an Assistant Professor, working on various aspects of wireless communication networks, with a special focus on non-terrestrial networks (NTN), sustainability, and artificial intelligence (AI) applications. Here, you can explore my most recent works and projects.`,
@@ -67,9 +81,9 @@ const SITE = {
   /* ---- ABOUT (one entry = one paragraph) -------------------------------- */
   about: [
     `Hello!`,
-    `I am a senior researcher on wireless communications. Currently, I'm working as an Assistant Professor of Telecommunications for Ankara Yıldırım Beyazıt University, Turkiye, where I previously worked as a Lecturer between 2020 and 2021, and as a Research Assistant between 2013 and 2016. Between 2023 and 2024, I worked as a Visiting Professor at Carleton University, Canada for a full year. I am the Founding Director of AYBU NTN-Lab(Non-Terrestrial Networks Laboratory) at Ankara Yildirim Beyazit University. My current research interest is sustainability in non-terrestrial networks (NTN)-assisted wireless communication networks.`,
+    `I am a senior researcher on wireless communications. Currently, I'm working as an Assistant Professor of Telecommunications for Ankara Yıldırım Beyazıt University, Turkiye, where I previously worked as a Lecturer between 2020 and 2021, and as a Research Assistant between 2013 and 2016. Between 2023 and 2024, I worked as a Visiting Professor at Carleton University, Canada for a full year. I am the Director of CosetLab (Communication and Sensing Technologies Laboratory) at Ankara Yildirim Beyazit University. My current research interest is sustainability in non-terrestrial networks (NTN)-assisted wireless communication networks.`,
     `I received my Ph.D. degree from the James Watt School of Engineering, University of Glasgow, UK, and obtained my B.Sc. (in Electrical and Electronics Engineering) and M.Sc. (in Electronics and Communication Engineering) from Eskisehir Osmangazi University, Turkiye and Ankara Yildirim Beyazit University, Turkiye, in 2013 and 2016, respectively.`,
-    `I have authored/co-authored 60+ journal & conference papers as well as book chapters published at top-tier venues. Additionally, we have received Workshop Best Paper Award in IEEE WCNC 2019.`,
+    `I have authored/co-authored 50+ journal & conference papers as well as book chapters published at top-tier venues. Additionally, we have received Workshop Best Paper Award in IEEE WCNC 2019.`,
     `I have been serving as guest editor, research topic editor, and academic reviewer for various high-class journals and conferences. We have also organized a workshop at IEEE-WCNC 2023, titled "AI-Enabled Network Orchestration: Design Challenges and Opportunities for 6G Networks." I have also delivered several seminars, talks, and keynote speeches that helped me sharing experience with people from distintive backgrounds.`,
     `I am happily married and have one lovely kid.`,
   ],

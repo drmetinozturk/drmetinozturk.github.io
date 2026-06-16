@@ -343,12 +343,20 @@
 
   /* ----- stats ----- */
   const nJ=S.journals.length, nC=S.conferences.length, nB=S.bookChapters.length;
-  const stats = [
-    [nJ+nC+nB, 'Research items'],
+  const autoTotal = nJ+nC+nB;
+  const defaultStats = [
+    [autoTotal, 'Research items'],
     [nJ, 'Journal papers'],
     [nC, 'Conference papers'],
     [nB, 'Book chapters'],
   ];
+  // If content.js defines heroStats, use it. A keyword in `num` auto-counts:
+  //   publications/auto -> pub total, talks -> talks list, courses -> all courses
+  const nCourses = (S.gradCourses ? S.gradCourses.length : 0) + (S.undergradCourses ? S.undergradCourses.length : 0);
+  const counts = { auto: autoTotal, publications: autoTotal, talks: S.talks.length, courses: nCourses };
+  const stats = (S.heroStats && S.heroStats.length)
+    ? S.heroStats.map(s => [ (typeof s.num === 'string' && s.num in counts) ? counts[s.num] : s.num, s.label ])
+    : defaultStats;
   const hs = $('heroStats');
   stats.forEach(([n,l])=>{
     const d = el('div','stat'); d.appendChild(el('div','num',n)); d.appendChild(el('div','lab',l)); hs.appendChild(d);
