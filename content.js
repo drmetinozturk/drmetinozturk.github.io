@@ -38,7 +38,7 @@ const SITE = {
   /*   `talks`        -> entries in your Talks list                          */
   /*   `courses`      -> graduate + undergraduate courses                    */
   heroStats: [
-    { num: `publications`, label: `Research publications` },
+    { num: `publications`, label: `Publications` },
     { num: 6,              label: `Projects` },
     { num: `talks`,        label: `Talks` },
     { num: `courses`,      label: `Courses taught` },
