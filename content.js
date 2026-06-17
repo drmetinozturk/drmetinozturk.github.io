@@ -27,7 +27,7 @@ const SITE = {
   name: `Metin Ozturk, PhD, SMIEEE`,
   tagline: `Wireless Communications | Non-Terrestrial Networks | 6G | AI`,
   photo: `profilepic.jpg`,                 // keep this image file next to index.html
-  lastUpdated: `15 June 2026`,      // change this whenever you update the site
+  lastUpdated: `17 June 2026`,      // change this whenever you update the site
   copyrightYear: `2024`,
 
   /* ---- THE NUMBER STRIP AT THE TOP OF THE PAGE -------------------------- */
