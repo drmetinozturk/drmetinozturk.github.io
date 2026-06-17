@@ -51,7 +51,7 @@ const SITE = {
   email: `metin.ozturk@aybu.edu.tr`,
   links: {
     linkedin:     `https://www.linkedin.com/in/metin-ozturk`,
-    twitter:      `https://twitter.com/MettinOzturk`,
+    twitter:      `https://x.com/MetinOzturkPhD`,
     scholar:      `https://scholar.google.ca/citations?user=4UxKZw4AAAAJ&hl=en`,
     researchgate: `https://www.researchgate.net/profile/Metin-Ozturk-3`,
   },
