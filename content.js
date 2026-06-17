@@ -65,11 +65,12 @@ const SITE = {
     { date: `25 June 2025`,     body: `We delivered a tutorial titled "6G and Beyond Wireless Communication Systems with High Altitude Platform Stations (HAPS)", co-presented with Cihan Kement, at IEEE SIU 2025 (Signal Processing and Communication Applications Conference), Istanbul, Turkiye.` },
     { date: `09 May 2025`,      body: `I gave a seminar titled "Elevating Connectivity: HAPS-Based Communications for a Connected Future" at Electrical and Electronics Engineering, Middle East Technical University (METU), Ankara, Turkiye.` },
     { date: `23 April 2025`,    body: `I gave a webinar titled "The AI Revolution in Wireless Communications: Magic, Myth, or the Next Reality?" jointly organized by IEEE Women in Engineering Ottawa Section and Carleton University NTN-Lab.` },
-    { date: `19 December 2024`, body: `Became a panelist in an event, titled "Meeting with Academics", organized by IEEE AYBU Student Branch.` },
-    { date: `15 November 2024`, body: `Gave a seminar titled "Sky-High Solutions for Connectivity: How HAPS is Redefining Non-Terrestial Networks" at TUBITAK-Bilgem in Gebze, Kocaeli, Turkiye.` },
+   
 
     /* --- Older items, currently hidden (they were commented out before). ---
        To show one again, delete the // at the start of its line.            */
+    //	{ date: `19 December 2024`, body: `Became a panelist in an event, titled "Meeting with Academics", organized by IEEE AYBU Student Branch.` },
+    //	{ date: `15 November 2024`, body: `Gave a seminar titled "Sky-High Solutions for Connectivity: How HAPS is Redefining Non-Terrestial Networks" at TUBITAK-Bilgem in Gebze, Kocaeli, Turkiye.` },
     // { date: `02 October 2024`, body: `I was elevated to IEEE Senior Membership.` },
     // { date: `16 July 2024`,    body: `Metin Ozturk was interviewed by Cahid Atik from gdh digital, a large media outlet in Türkiye, about AI-related threats and opportunities, including those in 6G networks.` },
     // { date: `18 June 2024`,    body: `Our paper, titled "Cell Switching in HAPS-Aided Networking: How the Obscurity of Traffic Loads Affects the Decision," was accepted for publication at IEEE Transactions on Vehicular Technology.` },
